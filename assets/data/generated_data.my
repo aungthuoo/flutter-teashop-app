@@ -1,0 +1,33 @@
+{
+  categories : [
+    '{{repeat(5, 7)}}',
+    {
+      index: '{{index()}}',
+      name: '{{random("Vegetables", "Food", "Meal", "Cold", "Cafe")}}',
+      description: '{{firstName()}} {{surname()}} {{company().toUpperCase()}}',
+      image: 'https://softwarezay.com/sample_images/grocery/categories/meat.png',
+
+    }
+  ],
+  new_arrivals : [
+    '{{repeat(5, 7)}}',
+    {
+      index: '{{index()}}',
+      name: '{{random("Vegetables", "Food", "Meal", "Cold", "Cafe")}}',
+      description: '{{firstName()}} {{surname()}} {{company().toUpperCase()}}',
+      image: 'https://softwarezay.com/sample_images/grocery/categories/meat.png',
+
+    }
+  ],
+  daily_needs : [
+    '{{repeat(5, 7)}}',
+    {
+      index: '{{index()}}',
+      name: '{{random("Vegetables", "Food", "Meal", "Cold", "Cafe")}}',
+      description: '{{firstName()}} {{surname()}} {{company().toUpperCase()}}',
+      image: 'https://softwarezay.com/sample_images/grocery/categories/meat.png',
+
+    }
+  ]
+
+}
