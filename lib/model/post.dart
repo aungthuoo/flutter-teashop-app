@@ -1,5 +1,7 @@
 import 'package:equatable/equatable.dart';
 
+import 'option.dart';
+
 class Post extends Equatable {
   final int id;
   final String image;
@@ -9,6 +11,8 @@ class Post extends Equatable {
   final String amount_unit;
   final double price;
   final int rating;
+  final bool is_selected; 
+  final List<Option> options;  
 
   Post(
       {this.id,
@@ -18,10 +22,10 @@ class Post extends Equatable {
       this.currency_unit,
       this.amount_unit,
       this.price,
-      this.rating});
+      this.rating, this.is_selected, this.options});
 
   @override
-  List<Object> get props => [id, name, description, image, price, rating];
+  List<Object> get props => [id, name, description, image, price, rating, options];
 
   Post copyWith(
       {int id,
@@ -31,7 +35,9 @@ class Post extends Equatable {
       String currency_unit,
       String amount_unit,
       double price,
-      int rating}) {
+      int rating,
+      bool is_selected, 
+      List<Option> options }) {
     return Post(
         id: id ?? this.id,
         image: image ?? this.image,
@@ -40,7 +46,9 @@ class Post extends Equatable {
         currency_unit: currency_unit ?? this.currency_unit,
         amount_unit: amount_unit ?? this.amount_unit,
         price: price ?? this.price,
-        rating: rating ?? this.rating);
+        is_selected: is_selected ?? this.is_selected,
+        rating: rating ?? this.rating,
+        options: options ?? this.options);
   }
 
   static Post fromJson(dynamic json) {

@@ -1,5 +1,6 @@
 
 import 'package:http/http.dart' as http;
+import 'package:teashop/model/option.dart';
 import '../model/category.dart';
 import '../model/post.dart';
 import '../model/posts.dart';
@@ -52,6 +53,51 @@ class AppRepository extends DBModel {
             currency_unit: item['currency_unit'],
             amount_unit: item['amount_unit'],
             price: item['price'],
+          );
+        }).toList(),
+        
+      );
+
+
+  }
+
+  Future<Posts> fetchOrderItems(int id) async {
+    Map<String, dynamic> result = await parseJsonFromAssets('assets/data/order_items.json');
+    return Posts(
+        
+        items: result['items'].map<Post>((item) {
+          return Post(
+            id: item['id'],
+            name: item['name'],
+            description: item['description'],
+            image: item['image'],
+            currency_unit: item['currency_unit'],
+            amount_unit: item['amount_unit'],
+            price: item['price'],
+            options : item['options'].map<Option>((option) {
+              return Option(
+                id: option['id'],
+                type: option['type'],
+                index: option['index'],
+                title: option['title'],
+                max_item: option['max_item'],
+                min_item: option['min_item'],
+                sorting: option['sorting'],
+                selected_id: option['selected_id'],
+                children: option['children'].map<Post>((child) {
+                  return Post(
+                    id: child['id'],
+                    name: child['name'],
+                    description: child['description'],
+                    image: child['image'],
+                    currency_unit: child['currency_unit'],
+                    amount_unit: child['amount_unit'],
+                    price: child['price'],
+                    is_selected: child['is_selected'],
+                  );
+                }).toList(),
+              );
+            }).toList(),
           );
         }).toList(),
         

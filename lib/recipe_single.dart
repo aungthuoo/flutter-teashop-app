@@ -5,6 +5,7 @@
   
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:teashop/confirm_order.dart';
 import 'assets/assets.dart';
 import './recipe_details.dart';
 import './network_image.dart';
@@ -217,9 +218,15 @@ class RecipeSinglePage extends StatelessWidget {
                           color: Colors.white,
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
                           onPressed: (){
+                            /*
                             Navigator.push(context, MaterialPageRoute(
                               builder: (_) => RecipeDetailsPage()
                             ));
+                            */
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => ConfirmOrderPage()));
                           },
                         ),
                       ),

@@ -24,3 +24,11 @@ class FetchPostEvent extends PostEvent {
   @override
   String toString() => 'FetchPostEvent';
 }
+
+class FetchOrderItemsEvent extends PostEvent {
+  final int id;
+  FetchOrderItemsEvent({this.id}) : super([]);
+
+  @override
+  String toString() => 'FetchPostEvent';
+}

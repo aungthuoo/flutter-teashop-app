@@ -37,6 +37,11 @@ class PostBloc extends Bloc<PostEvent, PostState> {
       yield PostLoading();
       final items = await appRepository.fetchPosts(1);
       yield PostsLoaded(items: items);
+    }else if (event is FetchOrderItemsEvent) {
+      print('FetchPostEvent fire');
+      yield PostLoading();
+      final items = await appRepository.fetchOrderItems(1);
+      yield PostsLoaded(items: items);
     }else if (event is FetchPostEvent) {
       print('FetchDataEvent fire');
       yield PostLoading();
