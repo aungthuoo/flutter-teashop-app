@@ -73,6 +73,7 @@ class AppRepository extends DBModel {
             image: item['image'],
             currency_unit: item['currency_unit'],
             amount_unit: item['amount_unit'],
+            qty: item['qty'],
             price: item['price'],
             options : item['options'].map<Option>((option) {
               return Option(
@@ -108,15 +109,40 @@ class AppRepository extends DBModel {
 
   Future<Post> fetchPost(int id) async {
 
-    Map<String, dynamic> result = await parseJsonFromAssets('assets/data/post.json');
+    Map<String, dynamic> item = await parseJsonFromAssets('assets/data/post.json');
     return Post(
-      id: result['id'],
-      name: result['name'],
-      description: result['description'],
-      image: result['image'],
-      currency_unit: result['currency_unit'],
-      amount_unit: result['amount_unit'],
-      price: result['price'],
+      id: item['id'],
+      name: item['name'],
+      description: item['description'],
+      image: item['image'],
+      currency_unit: item['currency_unit'],
+      amount_unit: item['amount_unit'],
+      qty: item['qty'],
+      price: item['price'],
+      options : item['options'].map<Option>((option) {
+        return Option(
+          id: option['id'],
+          type: option['type'],
+          index: option['index'],
+          title: option['title'],
+          max_item: option['max_item'],
+          min_item: option['min_item'],
+          sorting: option['sorting'],
+          selected_id: option['selected_id'],
+          children: option['children'].map<Post>((child) {
+            return Post(
+              id: child['id'],
+              name: child['name'],
+              description: child['description'],
+              image: child['image'],
+              currency_unit: child['currency_unit'],
+              amount_unit: child['amount_unit'],
+              price: child['price'],
+              is_selected: child['is_selected'],
+            );
+          }).toList(),
+        );
+      }).toList(),
     );
 
   }

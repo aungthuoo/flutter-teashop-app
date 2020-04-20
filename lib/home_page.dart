@@ -6,6 +6,8 @@ import './assets/assets.dart';
 import './recipe_single.dart';
 import 'bloc/post_bloc.dart';
 import 'package:http/http.dart' as http;
+import 'confirm_order.dart';
+import 'menu_item.dart';
 import 'model/post.dart';
 
 
@@ -334,9 +336,11 @@ class _HomePageState extends State<HomePageState> {
                                       padding: const EdgeInsets.only(left: 4.0),
                                       child: GestureDetector(
                                         onTap: (){
+                                          /*
                                           Navigator.push(context, MaterialPageRoute(
-                                            builder: (_) => RecipeSinglePage()
+                                            builder: (_) => MenuItemPage()
                                           ));
+                                          */
                                         },
                                         child: Container(
                                           margin: EdgeInsets.only(right: 20),
@@ -387,124 +391,136 @@ class _HomePageState extends State<HomePageState> {
                          
                         ],
                       )),
-                      _buildItems(state.items.items)
-                   
+                      _buildItems(state.items.items),
+                      SliverToBoxAdapter(
+                          child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          SizedBox(height: 60.0),
+                         
+                        ],
+                      )),
+                      
                     ],
                   ),
                 ),
-                /*
+                
                 Positioned(
                   bottom: 0,
                   left: 0,
                   right: 0,
+                  
+                  child: GestureDetector(
+                    onTap: (){
+                      print("Container clicked");
+                      Navigator.push(context, MaterialPageRoute(
+                        builder: (_) => ConfirmOrderPage(cartItems: state.cartItems)
+                      ));
+                    },
+                    child: Container(
+                      color: Colors.black54,
+                      child: Padding(
+                        padding: const EdgeInsets.all(15.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            Text("${state.cartItems.length ?? 0 } Items", style: TextStyle(
+                              color: Colors.white
+                            ),),
+                            Icon(Icons.shopping_cart, color: Colors.white70,),
+                          ],
+                        ),
+                      ),
+                    ),
+                  )
+                  /*
 
                   child: TextField(
                     decoration: InputDecoration(
                       fillColor: Colors.black87,
-                      suffixIcon: Icon(Icons.search, color: Colors.white70,),
+                      suffixIcon: Icon(Icons.shopping_cart, color: Colors.white70,),
                       filled: true,
-                      hintText: "Search your recipe",
+                      hintText: "3 Items",
                       hintStyle: TextStyle(color: Colors.white70)
                     ),
                   ),
+                  */
                 )
-                */
+                
               ],
             ));
           
-          /*
-          return Container(
-            child: CustomScrollView(
-              slivers: <Widget>[
-                //_buildSlider(state.items.sliders),
-                SliverToBoxAdapter(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        _buildSlider(state.items.sliders),
-                      ]
-                    ),
-                ),
-                SliverToBoxAdapter(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        _buildCategoriesGrid(state.items.categories),
-                      ]
-                    ),
-                ),
-                SliverToBoxAdapter(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        
-                        _buildFlashSales(state.items.flash_items),
-                      ]
-                    ),
-                ),
-                
-                SliverToBoxAdapter(
-                    child: Center(child: Text('Popular Items', style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20.0),)),
-                ),
-                
-                _buildPopular(state.items.featured_items),
-                
-                SliverToBoxAdapter(
-                    child: Center(child: Padding(
-                      padding: const EdgeInsets.only(top : 20.0, bottom: 15.0),
-                      child: Text('Just for You', style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20.0),),
-                    )),
-                ),
-                _buildAllItems(state.items.items),
-                
-              ],
-            ),
-          );
-          */
-
         
         }
       },
     );
   }
 
+
+  _getRequests(Post post) async {
+    BlocProvider.of<PostBloc>(context)
+        .add(AddCartItemEvent('this is note ', post));
+  }
+
   Widget _buildItems(List<Post> items){
     List<Widget> widgets = List<Widget>();
     if (items.length > 0) {
-      
+      /*
+      Navigator.push(context, MaterialPageRoute(
+          builder: (_) => MenuItemPage()
+        ));
+      */
       for (var i = 0; i < items.length; i++) {
         widgets.add(
-          Container(
-            margin: EdgeInsets.only(right: 20),
-            width: false ? 150 : 120,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Container(
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15.0),
-                      image: DecorationImage(
-                        image: CachedNetworkImageProvider(
-                          items[i].image,
-                        ),
-                        fit: BoxFit.cover,
-                      )),
-                  height: false ? 180 : 80,
-                ),
-                SizedBox(height: 10.0),
-                Padding(
-                  padding: const EdgeInsets.only(left: 8.0),
-                  child: Text(
-                    "${items[i].name}".toUpperCase(),
-                    style: TextStyle(color: Colors.white, fontSize: 14.0),
+          GestureDetector(
+            onTap: (){
+              /*
+              Navigator.push(context, MaterialPageRoute(
+                builder: (_) => MenuItemPage()
+              ));
+              */
+              Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => MenuItemPage()),
+                        ) //.then((menuItem)=>_getRequests(menuItem)
+                            .then((menuItem) => (menuItem != null)
+                                ? _getRequests(menuItem)
+                                : null);
+            },
+            child: Container(
+              margin: EdgeInsets.only(right: 20),
+              width: false ? 150 : 120,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Container(
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15.0),
+                        image: DecorationImage(
+                          image: CachedNetworkImageProvider(
+                            items[i].image,
+                          ),
+                          fit: BoxFit.cover,
+                        )),
+                    height: false ? 180 : 80,
                   ),
-                )
-              ],
+                  SizedBox(height: 10.0),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 8.0),
+                    child: Text(
+                      "${items[i].name}".toUpperCase(),
+                      style: TextStyle(color: Colors.white, fontSize: 14.0),
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
         );
       }
     }
+
     
     return SliverPadding(
       padding: const EdgeInsets.only(left : 15.0, right: 15.0),
@@ -519,8 +535,13 @@ class _HomePageState extends State<HomePageState> {
   Widget _buildItem(BuildContext context, index, {bool large = false}) {
     return GestureDetector(
       onTap: (){
+        /*
         Navigator.push(context, MaterialPageRoute(
           builder: (_) => RecipeSinglePage()
+        ));
+        */
+        Navigator.push(context, MaterialPageRoute(
+          builder: (_) => MenuItemPage()
         ));
       },
       child: Container(
@@ -594,6 +615,7 @@ class _HomePageState extends State<HomePageState> {
             },
           ),
         ),
+        
         /*
         OutlineButton(
           color: Colors.white,
@@ -634,7 +656,9 @@ class _HomePageState extends State<HomePageState> {
           textColor: Colors.white,
           borderSide: BorderSide(color: Colors.white),
           child: Text("Sort".toUpperCase()),
-          onPressed: () {},
+          onPressed: () {
+
+          },
         ),
         SizedBox(width: 16.0),
       ],
@@ -681,194 +705,3 @@ class _HomePageState extends State<HomePageState> {
   }
 
 }
-
-
-/*
-class MyApp extends StatelessWidget {
-  static final String path = "lib/src/pages/food/recipe_list.dart";
-  final Color color1 = Color(0xffB5192F);
-  final Color color2 = Color(0xffE21F3D);
-  final Color color3 = Color(0xffFE1949);
-  final Color color4 = Color(0xffF0631C);
-  final List<String> images = [
-    breakfast,
-    burger,
-    cupcake,
-    frenchFries,
-    fries,
-    meal,
-    pancake,
-  ];
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        body: Stack(
-          children: <Widget>[
-            Container(
-              decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                      colors: [color3, color4],
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter)),
-            ),
-            Container(
-              height: 450,
-              width: 300,
-              decoration: BoxDecoration(
-                  borderRadius:
-                      BorderRadius.only(bottomRight: Radius.circular(30)),
-                  color: color2),
-            ),
-            Container(
-              height: 100,
-              width: 80,
-              decoration: BoxDecoration(
-                  borderRadius:
-                      BorderRadius.only(bottomRight: Radius.circular(30)),
-                  color: color1),
-            ),
-            SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  SizedBox(height: 30.0),
-                  _buildHeader(context),
-                  SizedBox(height: 40.0),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 16.0),
-                    child: Text(
-                      "My Favorites".toUpperCase(),
-                      style: TextStyle(color: Colors.white, fontSize: 16.0),
-                    ),
-                  ),
-                  SizedBox(height: 20.0),
-                  Container(
-                    height: 200,
-                    child: ListView.builder(
-                      padding: const EdgeInsets.only(left: 16.0),
-                      scrollDirection: Axis.horizontal,
-                      itemBuilder: _buildItem,
-                    ),
-                  ),
-                  SizedBox(height: 40.0),
-                  Container(
-                    height: 230,
-                    child: ListView.builder(
-                      padding: const EdgeInsets.only(left: 16.0),
-                      scrollDirection: Axis.horizontal,
-                      itemBuilder: (context, index) =>  _buildItem(context, index, large:  true),
-                    ),
-                  ),
-                  SizedBox(height: 20.0),
-                  Container(
-                    height: 230,
-                    child: ListView.builder(
-                      padding: const EdgeInsets.only(left: 16.0),
-                      scrollDirection: Axis.horizontal,
-                      itemBuilder: (context, index) =>  _buildItem(context, index, large:  true),
-                    ),
-                  ),
-                  SizedBox(height: 40.0),
-                ],
-              ),
-            ),
-            Positioned(
-              bottom: 0,
-              left: 0,
-              right: 0,
-
-              child: TextField(
-                decoration: InputDecoration(
-                  fillColor: Colors.black87,
-                  suffixIcon: Icon(Icons.search, color: Colors.white70,),
-                  filled: true,
-                  hintText: "Search your recipe",
-                  hintStyle: TextStyle(color: Colors.white70)
-                ),
-              ),
-            )
-          ],
-        ));
-  }
-
-  Widget _buildItem(BuildContext context, index, {bool large = false}) {
-    return GestureDetector(
-      onTap: (){
-        Navigator.push(context, MaterialPageRoute(
-          builder: (_) => RecipeSinglePage()
-        ));
-      },
-      child: Container(
-        margin: EdgeInsets.only(right: 20),
-        width: large ? 150 : 120,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Container(
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15.0),
-                  image: DecorationImage(
-                    image: CachedNetworkImageProvider(
-                      images[index % images.length],
-                    ),
-                    fit: BoxFit.cover,
-                  )),
-              height: large ? 180 : 150,
-            ),
-            SizedBox(height: 10.0),
-            Padding(
-              padding: const EdgeInsets.only(left: 8.0),
-              child: Text(
-                "French\nToast".toUpperCase(),
-                style: TextStyle(color: Colors.white, fontSize: 14.0),
-              ),
-            )
-          ],
-        ),
-      ),
-    );
-  }
-
-  Row _buildHeader(BuildContext context) {
-    return Row(
-      children: <Widget>[
-        IconButton(
-          color: Colors.white,
-          iconSize: 40.0,
-          icon: Icon(Platform.isIOS ? Icons.arrow_back_ios : Icons.arrow_back),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
-        SizedBox(width: 40.0),
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Text(
-                "Your customised",
-                style: TextStyle(color: Colors.white),
-              ),
-              Text(
-                "Breakfast".toUpperCase(),
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 24.0,
-                    fontWeight: FontWeight.bold),
-              )
-            ],
-          ),
-        ),
-        OutlineButton(
-          color: Colors.white,
-          textColor: Colors.white,
-          borderSide: BorderSide(color: Colors.white),
-          child: Text("Filter".toUpperCase()),
-          onPressed: () {},
-        ),
-        SizedBox(width: 16.0),
-      ],
-    );
-  }
-}
-*/

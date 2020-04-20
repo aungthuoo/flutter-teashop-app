@@ -29,16 +29,27 @@ class PostError extends PostState {
 
 class PostsLoaded extends PostState {
   final Posts items;
-  PostsLoaded({this.items}) : super([items]);
+  final List<Post> cartItems; 
+  PostsLoaded({this.items, this.cartItems}) : super([items, cartItems]);
 
   @override
   String toString() => 'PostsLoaded';
 }
 
 
+class CartLoaded extends PostState {
+  final Header cartHeader; 
+  final List<Post> cartItems; 
+  CartLoaded({this.cartHeader, this.cartItems}) : super([cartHeader, cartItems]);
+
+  @override
+  String toString() => 'PostsLoaded';
+}
+
 class PostLoaded extends PostState {
   final Post item;
-  PostLoaded({this.item}) : super([item]);
+  final List<Post> cartItems; 
+  PostLoaded({this.item, this.cartItems}) : super([item, cartItems]);
 
   @override
   String toString() => 'PostLoaded';

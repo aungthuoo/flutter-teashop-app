@@ -25,6 +25,39 @@ class FetchPostEvent extends PostEvent {
   String toString() => 'FetchPostEvent';
 }
 
+class SelectOptionItemEvent extends PostEvent {
+  final int groupId;
+  final int index;
+  SelectOptionItemEvent(
+      this.groupId, this.index)
+      : super([groupId, index]);
+}
+
+
+
+class SelectCheckOptionItemEvent extends PostEvent {
+  final int optionGroupId;
+  final int optionItemIndex;
+  final bool isSelected;
+  SelectCheckOptionItemEvent(this.optionGroupId, this.optionItemIndex,
+      this.isSelected)
+      : super([optionGroupId, optionItemIndex, isSelected]);
+}
+
+class AddCartItemEvent extends PostEvent {
+  final String note;
+  final Post post; 
+  AddCartItemEvent(this.note, this.post)
+      : super([note, post]);
+}
+
+class SetCartItemsEvent extends PostEvent {
+  final List<Post> cartItems;
+  SetCartItemsEvent(this.cartItems)
+      : super([cartItems]);
+}
+
+
 class FetchOrderItemsEvent extends PostEvent {
   final int id;
   FetchOrderItemsEvent({this.id}) : super([]);
