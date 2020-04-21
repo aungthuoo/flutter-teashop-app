@@ -97,7 +97,7 @@ class ConfirmOrderPage extends StatelessWidget{
                                       children: <Widget>[
                                         Text(
                                           //formatter.format( double.tryParse (menuItems.totalGross.toString())),
-                                          'Ks ${state.cartHeader.sub_total}',
+                                          'Ks ${formatter.format( state.cartHeader.sub_total) }',
 
                                           style: TextStyle(
                                               fontFamily: 'ZawgyiOne',
@@ -139,7 +139,7 @@ class ConfirmOrderPage extends StatelessWidget{
                                         Text(
                                           //formatter.format( double.tryParse (state.voucherHeader.totalTax.toString())),
 
-                                          '${state.cartHeader.tax}',
+                                          '${ formatter.format(  state.cartHeader.tax ) }',
                                           style: TextStyle(
                                               fontFamily: 'ZawgyiOne',
                                               fontSize: 14.0,
@@ -183,7 +183,7 @@ class ConfirmOrderPage extends StatelessWidget{
                                       children: <Widget>[
                                         Text(
                                           //formatter.format( double.tryParse (state.voucherHeader.totalNet.toString())),
-                                          'Ks ${state.cartHeader.total}',
+                                          'Ks ${ formatter.format( state.cartHeader.total )}',
                                           style: TextStyle(
                                               fontFamily: 'ZawgyiOne',
                                               fontSize: 14.0,
@@ -486,9 +486,10 @@ class ConfirmOrderPage extends StatelessWidget{
                   new TextSpan(
                       text: '${item.name}',
                       style: new TextStyle(fontWeight: FontWeight.bold)),
+                  (item.price > 0 ) ? 
                   new TextSpan(
                       text: '  Ks ${formatter.format(item.price)}',
-                      style: new TextStyle(fontWeight: FontWeight.normal)),
+                      style: new TextStyle(fontWeight: FontWeight.normal)) : TextSpan(text : ''),
                   
                 ],
               ),
@@ -502,7 +503,7 @@ class ConfirmOrderPage extends StatelessWidget{
                 //Text( formatter.format( double.tryParse (orderItem.amount.toString() )),
                 //    style: TextStyle(color: Colors.black, fontSize: 17.0, fontWeight: FontWeight.bold) )
                 Text(
-                  '${item.total}',
+                  '${formatter.format( item.total) }',
                   style: TextStyle(
                       fontFamily: 'ZawgyiOne',
                       fontSize: 13.0,

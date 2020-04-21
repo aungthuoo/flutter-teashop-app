@@ -424,7 +424,7 @@ class _HomePageState extends State<HomePageState> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: <Widget>[
-                            Text("${state.cartItems.length ?? 0 } Items", style: TextStyle(
+                            Text("${state.cartItems.length  } Items.", style: TextStyle(
                               color: Colors.white
                             ),),
                             Icon(Icons.shopping_cart, color: Colors.white70,),

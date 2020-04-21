@@ -30,7 +30,8 @@ class PostError extends PostState {
 class PostsLoaded extends PostState {
   final Posts items;
   final List<Post> cartItems; 
-  PostsLoaded({this.items, this.cartItems}) : super([items, cartItems]);
+  final int count; 
+  PostsLoaded({this.items, this.cartItems, this.count}) : super([items, cartItems, count]);
 
   @override
   String toString() => 'PostsLoaded';

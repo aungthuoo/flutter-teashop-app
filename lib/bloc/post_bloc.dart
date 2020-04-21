@@ -68,7 +68,8 @@ class PostBloc extends Bloc<PostEvent, PostState> {
       cartItems.add(
         menuItem
       ); 
-      yield PostsLoaded(items: (state as PostsLoaded).items, cartItems: cartItems);
+
+      yield PostsLoaded(items: (state as PostsLoaded).items, cartItems: cartItems, count: cartItems.length);
     } else if (event is SetCartItemsEvent) {
       Header header = _calculateCartTotal(event.cartItems); 
       yield CartLoaded(cartHeader : header, cartItems: event.cartItems);

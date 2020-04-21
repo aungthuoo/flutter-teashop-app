@@ -7,8 +7,8 @@
   "currency_unit": "Ks",
   "unit" : "1 pcs", 
   "qty" : 1, 
-  "price": 400.00,
-  "total": 400.00,
+  "price": 0.00,
+  "total": 0.00,
   "note": "", 
   "options": [
     {
