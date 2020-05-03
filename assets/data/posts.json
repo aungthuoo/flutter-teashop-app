@@ -1,4 +1,80 @@
 {
+  "sliders": [
+    {
+      "index": 0,
+      "name": "လျှပ်စစ်ပစ္စည်းများ",
+      "description": "Consequat mollit elit excepteur tempor commodo sunt excepteur mollit reprehenderit incididunt irure do dolore cillum. Labore nisi nulla in ad exercitation elit. Minim fugiat id ad elit officia esse laborum officia amet adipisicing qui et cupidatat sunt. Magna velit do sit aute. Eiusmod minim nulla fugiat ea nisi consectetur Lorem ex qui consequat laborum tempor. Aute eiusmod occaecat consectetur aliqua ea quis enim ullamco et magna irure.\r\n",
+      "icon": "", 
+      "image": "https://softwarezay.com/sample_images/ecommerce/sliders/slide1.jpeg"
+    },
+    {
+      "index": 1,
+      "name": "အိမ်သုံးပစ္စည်းမျာ",
+      "description": "Minim veniam mollit id nostrud eu aliqua ad ullamco nulla nulla Lorem deserunt ipsum labore. Veniam est aute fugiat veniam qui incididunt Lorem duis aute eu irure consequat. Consequat non laboris enim do proident proident occaecat cupidatat incididunt. Aliqua laboris esse dolore pariatur. Exercitation consequat consequat laborum adipisicing ex commodo est.\r\n",
+      "icon": "", 
+      "image": "https://softwarezay.com/sample_images/ecommerce/sliders/slide2.jpeg"
+    },
+    {
+      "index": 2,
+      "name": "ကျန်းမာရေးနှင် အလှအပရေးရာ",
+      "description": "Dolore ad cillum ex est commodo id pariatur. Sunt non pariatur ad excepteur ut eu nisi magna. Dolore laboris irure amet in ut consequat cupidatat consectetur sunt aliquip nostrud tempor amet. Laboris eu deserunt consequat tempor aute proident cupidatat sint irure ut et occaecat velit laborum. Dolor adipisicing eiusmod dolore in voluptate elit non fugiat nulla elit cupidatat sunt velit.\r\n",
+      "icon": "", 
+      "image": "https://softwarezay.com/sample_images/ecommerce/sliders/slide3.jpeg"
+    },
+    {
+      "index": 3,
+      "name": "အမျိုးသမီးဖက်ရှင်",
+      "description": "Ipsum excepteur sint incididunt mollit eiusmod sit est enim reprehenderit ea elit. Ea eiusmod tempor cillum voluptate nulla ipsum sint nostrud ad ex commodo deserunt proident ipsum. Cupidatat nulla proident commodo voluptate sunt nostrud incididunt laborum labore.\r\n",
+      "icon": "", 
+      "image": "https://softwarezay.com/sample_images/ecommerce/sliders/slide4.jpeg"
+    },
+    {
+      "index": 4,
+      "name": "အမျိုးသားဖက်ရှင်",
+      "description": "Ipsum excepteur sint incididunt mollit eiusmod sit est enim reprehenderit ea elit. Ea eiusmod tempor cillum voluptate nulla ipsum sint nostrud ad ex commodo deserunt proident ipsum. Cupidatat nulla proident commodo voluptate sunt nostrud incididunt laborum labore.\r\n",
+      "icon": "", 
+      "image": "https://softwarezay.com/sample_images/ecommerce/sliders/slide5.jpeg"
+    }
+    
+  ],
+  "categories": [
+    {
+      "index": 0,
+      "name": "လျှပ်စစ်ပစ္စည်းများ",
+      "description": "Consequat mollit elit excepteur tempor commodo sunt excepteur mollit reprehenderit incididunt irure do dolore cillum. Labore nisi nulla in ad exercitation elit. Minim fugiat id ad elit officia esse laborum officia amet adipisicing qui et cupidatat sunt. Magna velit do sit aute. Eiusmod minim nulla fugiat ea nisi consectetur Lorem ex qui consequat laborum tempor. Aute eiusmod occaecat consectetur aliqua ea quis enim ullamco et magna irure.\r\n",
+      "icon": "dirves", 
+      "image": "https://softwarezay.com/sample_images/ecommerce/categories/vegetable.png"
+    },
+    {
+      "index": 1,
+      "name": "အိမ်သုံးပစ္စည်းများ",
+      "description": "Minim veniam mollit id nostrud eu aliqua ad ullamco nulla nulla Lorem deserunt ipsum labore. Veniam est aute fugiat veniam qui incididunt Lorem duis aute eu irure consequat. Consequat non laboris enim do proident proident occaecat cupidatat incididunt. Aliqua laboris esse dolore pariatur. Exercitation consequat consequat laborum adipisicing ex commodo est.\r\n",
+      "icon": "weekend", 
+      "image": "https://softwarezay.com/sample_images/ecommerce/categories/fruit.png"
+    },
+    {
+      "index": 2,
+      "name": "ကျန်းမာရေးနှင် အလှအပရေးရာ",
+      "description": "Dolore ad cillum ex est commodo id pariatur. Sunt non pariatur ad excepteur ut eu nisi magna. Dolore laboris irure amet in ut consequat cupidatat consectetur sunt aliquip nostrud tempor amet. Laboris eu deserunt consequat tempor aute proident cupidatat sint irure ut et occaecat velit laborum. Dolor adipisicing eiusmod dolore in voluptate elit non fugiat nulla elit cupidatat sunt velit.\r\n",
+      "icon": "local_hospital", 
+      "image": "https://softwarezay.com/sample_images/ecommerce/categories/meat.png"
+    },
+    {
+      "index": 3,
+      "name": "အမျိုးသားဖက်ရှင်",
+      "description": "Ipsum excepteur sint incididunt mollit eiusmod sit est enim reprehenderit ea elit. Ea eiusmod tempor cillum voluptate nulla ipsum sint nostrud ad ex commodo deserunt proident ipsum. Cupidatat nulla proident commodo voluptate sunt nostrud incididunt laborum labore.\r\n",
+      "icon": "directions_walk", 
+      "image": "https://softwarezay.com/sample_images/ecommerce/categories/seafood.png"
+    },
+    {
+      "index": 3,
+      "name": "အမျိုးသမီးဖက်ရှင်",
+      "description": "Ipsum excepteur sint incididunt mollit eiusmod sit est enim reprehenderit ea elit. Ea eiusmod tempor cillum voluptate nulla ipsum sint nostrud ad ex commodo deserunt proident ipsum. Cupidatat nulla proident commodo voluptate sunt nostrud incididunt laborum labore.\r\n",
+      "icon": "pregnant_woman", 
+      "image": "https://softwarezay.com/sample_images/ecommerce/categories/seafood.png"
+    }
+    
+  ],
     "most_orders": [
       {
         "index": 0,
@@ -44,61 +120,104 @@
       }
       
     ],
-    "categories": [
+    "flash_items": [
       {
         "index": 0,
-        "name": "မနက်စာ",
-        "description": "Consequat mollit elit excepteur tempor commodo sunt excepteur mollit reprehenderit incididunt irure do dolore cillum. Labore nisi nulla in ad exercitation elit. Minim fugiat id ad elit officia esse laborum officia amet adipisicing qui et cupidatat sunt. Magna velit do sit aute. Eiusmod minim nulla fugiat ea nisi consectetur Lorem ex qui consequat laborum tempor. Aute eiusmod occaecat consectetur aliqua ea quis enim ullamco et magna irure.\r\n",
-        "icon": "dirves", 
-        "image": "https://softwarezay.com/sample_images/teashop/categories/breakfast.jpeg"
+        "name": "Acer Aspire 3 (A314) ( Celeron )",
+        "description": "Acer Aspire 3 (A314) ( Celeron )",
+        "image": "https://softwarezay.com/sample_images/ecommerce/items/acer-x34-predator-monitor.jpg",
+        "currency_unit": "Ks",
+        "unit" : "1 pcs", 
+        "price": 140000.00
       },
       {
         "index": 1,
-        "name": "လဘ္ဘက်ရည် အအေး",
-        "description": "Ipsum excepteur sint incididunt mollit eiusmod sit est enim reprehenderit ea elit. Ea eiusmod tempor cillum voluptate nulla ipsum sint nostrud ad ex commodo deserunt proident ipsum. Cupidatat nulla proident commodo voluptate sunt nostrud incididunt laborum labore.\r\n",
-        "icon": "pregnant_woman", 
-        "image": "https://softwarezay.com/sample_images/teashop/categories/tea-cafe.jpeg"
+        "name": "Men's Digital Q&Q Wrist Watch M127J003Y",
+        "description": "Harris Murphy GEEKOSIS",
+        "image": "https://softwarezay.com/sample_images/ecommerce/items/watch.png",
+        "currency_unit": "Ks",
+        "unit" : "1 Kg", 
+        "price": 25000.00
       },
       {
         "index": 2,
-        "name": "တရုတ်အစားအစာ",
-        "description": "Minim veniam mollit id nostrud eu aliqua ad ullamco nulla nulla Lorem deserunt ipsum labore. Veniam est aute fugiat veniam qui incididunt Lorem duis aute eu irure consequat. Consequat non laboris enim do proident proident occaecat cupidatat incididunt. Aliqua laboris esse dolore pariatur. Exercitation consequat consequat laborum adipisicing ex commodo est.\r\n",
-        "icon": "weekend", 
-        "image": "https://softwarezay.com/sample_images/teashop/categories/chinese-food.jpeg"
+        "name": "MaxBook 2 door half height 5 shelves-glass",
+        "description": "Huffman Carney EVENTAGE",
+        "image": "https://softwarezay.com/sample_images/ecommerce/items/maxbook-2-door-half-height-5-shelves-glass.jpg",
+        "currency_unit": "Ks",
+        "unit" : "1 pcs", 
+        "price": 120000.00
       },
       {
         "index": 3,
-        "name": "မြန်မာ့ထမင်းဟင်း",
-        "description": "Dolore ad cillum ex est commodo id pariatur. Sunt non pariatur ad excepteur ut eu nisi magna. Dolore laboris irure amet in ut consequat cupidatat consectetur sunt aliquip nostrud tempor amet. Laboris eu deserunt consequat tempor aute proident cupidatat sint irure ut et occaecat velit laborum. Dolor adipisicing eiusmod dolore in voluptate elit non fugiat nulla elit cupidatat sunt velit.\r\n",
-        "icon": "local_hospital", 
-        "image": "https://softwarezay.com/sample_images/teashop/categories/myanmar-food.jpeg"
-      },
-      {
-        "index": 4,
-        "name": "ရခိုင်အစားအစာ",
-        "description": "Ipsum excepteur sint incididunt mollit eiusmod sit est enim reprehenderit ea elit. Ea eiusmod tempor cillum voluptate nulla ipsum sint nostrud ad ex commodo deserunt proident ipsum. Cupidatat nulla proident commodo voluptate sunt nostrud incididunt laborum labore.\r\n",
-        "icon": "directions_walk", 
-        "image": "https://softwarezay.com/sample_images/teashop/categories/rakhine-food.jpeg"
-      },
-      {
-        "index": 5,
-        "name": "ပင်လယ်စာ",
-        "description": "Ipsum excepteur sint incididunt mollit eiusmod sit est enim reprehenderit ea elit. Ea eiusmod tempor cillum voluptate nulla ipsum sint nostrud ad ex commodo deserunt proident ipsum. Cupidatat nulla proident commodo voluptate sunt nostrud incididunt laborum labore.\r\n",
-        "icon": "pregnant_woman", 
-        "image": "https://softwarezay.com/sample_images/teashop/categories/sea-food.jpeg"
-      },
-      
-      {
-        "index": 6,
-        "name": "မုန့်မျိုးစုံ",
-        "description": "Ipsum excepteur sint incididunt mollit eiusmod sit est enim reprehenderit ea elit. Ea eiusmod tempor cillum voluptate nulla ipsum sint nostrud ad ex commodo deserunt proident ipsum. Cupidatat nulla proident commodo voluptate sunt nostrud incididunt laborum labore.\r\n",
-        "icon": "pregnant_woman", 
-        "image": "https://softwarezay.com/sample_images/teashop/categories/snacks.jpeg"
+        "name": "Oppo Neo 5",
+        "description": "Fletcher Hale ZANYMAX",
+        "image": "https://softwarezay.com/sample_images/ecommerce/items/oppo-neo-5.jpg",
+        "currency_unit": "Ks",
+        "unit" : "1 Kg", 
+        "price": 150000.00
       }
-
       
     ],
-    
+    "featured_items": [
+      {
+        "index": 0,
+        "name": "Acer Aspire 3 (A314) ( Celeron )",
+        "description": "Acer Aspire 3 (A314) ( Celeron )",
+        "image": "https://softwarezay.com/sample_images/ecommerce/items/acer-aspire-3-a314-celeron-.jpg",
+        "currency_unit": "Ks",
+        "unit" : "1 Kg", 
+        "price": 140000.00
+      },
+      {
+        "index": 1,
+        "name": "MAX-033 Shoe cabinet",
+        "description": "Harris Murphy GEEKOSIS",
+        "image": "https://softwarezay.com/sample_images/ecommerce/items/maxbook-2-door-half-height-5-shelves-glass.jpg",
+        "currency_unit": "Ks",
+        "unit" : "1 pcs", 
+        "price": 213000.00
+      },
+      {
+        "index": 2,
+        "name": "Acer X34 Predator Monitor",
+        "description": "Huffman Carney EVENTAGE",
+        "image": "https://softwarezay.com/sample_images/ecommerce/items/acer-x34-predator-monitor.jpg",
+        "currency_unit": "Ks",
+        "unit" : "1 Kg", 
+        "price": 1310400.00
+      },
+      {
+        "index": 3,
+        "name": "OPPO A37 (Dual Sim) (4G) - Rose Gold",
+        "description": "Fletcher Hale ZANYMAX",
+        "image": "https://softwarezay.com/sample_images/ecommerce/items/oppo-neo-5.jpg",
+        "currency_unit": "Ks",
+        "unit" : "1 Kg", 
+        "price": 169000.00
+      }
+      
+    ],
+    "just_for_you_items": [
+      {
+        "index": 0,
+        "name": "Adidas sneaker boost (light grey) (38)",
+        "description": "ဖရဲသီး",
+        "image": "https://softwarezay.com/sample_images/ecommerce/items/watermelon.jpg",
+        "currency_unit": "Ks",
+        "unit" : "1 Kg", 
+        "price": 1381.78
+      },
+      {
+        "index": 1,
+        "name": "Adidas sneaker EQT (dark blue) (41)",
+        "description": "Harris Murphy GEEKOSIS",
+        "image": "https://softwarezay.com/sample_images/ecommerce/items/water-apinatch.jpg",
+        "currency_unit": "Ks",
+        "unit" : "1 Kg", 
+        "price": 3190.03
+      }
+    ],
     
     "items": [
    

@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
 
+import 'image.dart';
 import 'option.dart';
 
 class Post extends Equatable {
@@ -15,6 +16,7 @@ class Post extends Equatable {
   final int rating;
   final bool is_selected; 
   final String note; 
+  final List<Image> images;  
   final List<Option> options;  
 
   Post(
@@ -28,10 +30,11 @@ class Post extends Equatable {
       this.price,
       this.total,
       this.note, 
+      this.images,
       this.rating, this.is_selected, this.options});
 
   @override
-  List<Object> get props => [id, name, description, image, qty, price, total, rating, note, options, is_selected];
+  List<Object> get props => [id, name, description, image, qty, price, total, rating, note, options, images, is_selected];
 
   Post copyWith(
       {int qty,
@@ -43,6 +46,7 @@ class Post extends Equatable {
       int optionGroupSelectedId,
       double total,
       double amount,
+      List<Image> images, 
       String note,
       int index}) {
     return Post(
@@ -58,6 +62,15 @@ class Post extends Equatable {
         rating:  this.rating,
         total:  total ?? this.total,
         note: note ?? this.note,
+        images: this.images.map<Image>((item) {
+          return Image(
+              id: item.id,
+              name: item.name,
+              description: item.description,
+              icon: item.icon,
+              image: item.image
+          );
+        }).toList(),
         options: this.options.map<Option>((rawOptionGroup) {
           return Option(
               id: rawOptionGroup.id,
@@ -101,7 +114,7 @@ class Post extends Equatable {
         rating:  this.rating,
         total:  this.total,
         note: note ?? this.note,
-
+        images: this.images,
         options: this.options.map<Option>((rawOptionGroup) {
           return Option(
               id: rawOptionGroup.id,
@@ -111,6 +124,7 @@ class Post extends Equatable {
               min_item: rawOptionGroup.min_item,
               sorting: rawOptionGroup.sorting,
               selected_id: rawOptionGroup.selected_id,
+              
               children: rawOptionGroup.children
                   .asMap()
                   .map((i, element) => MapEntry(

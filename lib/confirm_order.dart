@@ -4,6 +4,7 @@ import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
 
 import 'bloc/post_bloc.dart';
+import 'login.dart';
 import 'model/post.dart';
 class ConfirmOrderPage extends StatelessWidget{
   final formatter = new NumberFormat("#,###");
@@ -205,7 +206,12 @@ class ConfirmOrderPage extends StatelessWidget{
                                     // height: double.infinity,
                                     child: FlatButton(
                                       onPressed: () {
-                                        Navigator.pop(context);
+                                        //Navigator.pop(context);
+                                        
+                                        Navigator.push(context, MaterialPageRoute(
+                                          builder: (_) => LoginPage(cartItems: state.cartItems)
+                                        ));
+                                        
                                       },
                                       color: Colors.orange,
                                       textColor: Colors.white,

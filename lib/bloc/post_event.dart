@@ -10,6 +10,20 @@ class FetchPostsEvent extends PostEvent {
   FetchPostsEvent(this.id) : super([id]);
 }
 
+class FetchFlashPostsEvent extends PostEvent {
+  final int type; 
+  final int id;
+  final String caption; 
+  final List<Post> cartItems; 
+  FetchFlashPostsEvent(this.type, this.id, this.caption, this.cartItems) : super([type, id, caption, cartItems]);
+}
+
+
+class FetchSearchPostsEvent extends PostEvent {
+  final String searchString; 
+  FetchSearchPostsEvent(this.searchString) : super([searchString]);
+}
+
 class FetchDataEvent extends PostEvent {
   FetchDataEvent() : super([]);
 
@@ -47,8 +61,10 @@ class SelectCheckOptionItemEvent extends PostEvent {
 class AddCartItemEvent extends PostEvent {
   final String note;
   final Post post; 
-  AddCartItemEvent(this.note, this.post)
-      : super([note, post]);
+  final List<Post> cartItems; 
+  final Posts posts; 
+  AddCartItemEvent(this.note, this.post, this.cartItems, this.posts)
+      : super([note, post, cartItems, posts]);
 }
 
 class SetCartItemsEvent extends PostEvent {

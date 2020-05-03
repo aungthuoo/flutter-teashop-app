@@ -38,6 +38,16 @@ class PostsLoaded extends PostState {
 }
 
 
+class FlashPostsLoaded extends PostState {
+  final Posts items;
+  final List<Post> cartItems; 
+  final int count; 
+  FlashPostsLoaded({this.items, this.cartItems, this.count}) : super([items, cartItems, count]);
+
+  @override
+  String toString() => 'PostsLoaded';
+}
+
 class CartLoaded extends PostState {
   final Header cartHeader; 
   final List<Post> cartItems; 
@@ -47,6 +57,13 @@ class CartLoaded extends PostState {
   String toString() => 'PostsLoaded';
 }
 
+class SearchLoaded extends PostState {
+  final List<Post> items; 
+  SearchLoaded({this.items}) : super([items]);
+
+  @override
+  String toString() => 'SearchLoaded';
+}
 class PostLoaded extends PostState {
   final Post item;
   final List<Post> cartItems; 

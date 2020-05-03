@@ -27,18 +27,19 @@ dependencies:
   flutter_bloc: ^3.2.0
   cached_network_image: ^2.0.0
   font_awesome_flutter: 8.8.1
+  flutter_swiper: 1.1.6
+  flutter_custom_clippers: 1.1.0
+  countdown_flutter: 0.1.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
@@ -52,13 +53,12 @@ flutter:
     - assets/app-icon.jpg
     - assets/data/posts.json
     - assets/data/post.json
+    - assets/data/search.json
     - assets/data/order_items.json
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
-
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/assets-and-images/#from-packages
-
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
   # "family" key with the font family name, and a "fonts" key with a

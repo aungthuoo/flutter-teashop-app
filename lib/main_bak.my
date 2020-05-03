@@ -8,21 +8,48 @@ import './recipe_single.dart';
 import 'bloc/post_bloc.dart';
 import 'package:http/http.dart' as http;
 
+import 'home_page.dart';
 import 'model/post.dart';
 
 
-class LoginPage extends StatelessWidget {
-  final List<Post> cartItems; 
-  LoginPage({Key key, this.cartItems}) : super(key: key);
+void main() => runApp(MyApp());
+
+
+class MyApp extends StatelessWidget {
 
   GlobalKey<ScaffoldState> _drawerKey = GlobalKey();
   @override
     Widget build(BuildContext context) {
-      return BlocProvider(
-        create: (context) =>
-            PostBloc(httpClient: http.Client())..add(FetchPostsEvent(1)),
-        child: StatePage(),
-      );
+      return MaterialApp(
+      title: 'teashop',
+      theme: ThemeData(
+        // Define the default brightness and colors.
+        brightness: Brightness.light,
+        primaryColor: Colors.orange[800],
+        accentColor: Colors.orange[600],
+
+        // Define the default font family.
+        fontFamily: 'Georgia',
+
+        // Define the default TextTheme. Use this to specify the default
+        // text styling for headlines, titles, bodies of text, and more.
+        textTheme: TextTheme(
+          headline: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
+          title: TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic),
+          body1: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
+        ),
+      ),
+      home:  Scaffold(
+        key: _drawerKey,
+
+        body: BlocProvider(
+          create: (context) =>
+              PostBloc(httpClient: http.Client())..add(FetchPostsEvent(1)),
+          child: StatePage(),
+        ),
+      ),
+      debugShowCheckedModeBanner: false,
+    );
       
     }
 }
@@ -110,7 +137,7 @@ class _HomePageState extends State<StatePage> {
                         height: 20,
                       ),
                       Text(
-                        "Login ",
+                        "Tea Shop",
                         style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.w700,
@@ -139,7 +166,7 @@ class _HomePageState extends State<StatePage> {
                 onChanged: (String value){},
                 cursorColor: Colors.deepOrange,
                 decoration: InputDecoration(
-                    hintText: "email",
+                    hintText: "Waiter email",
                     prefixIcon: Material(
                       elevation: 0,
                       borderRadius: BorderRadius.all(Radius.circular(30)),
@@ -192,19 +219,17 @@ class _HomePageState extends State<StatePage> {
                     color: Colors.orange),
                 child: FlatButton(
                   child: Text(
-                    "Login",
+                    "ဝင်မည်",
                     style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.w700,
                         fontSize: 18),
                   ),
                   onPressed: () {
-                    /*
                      Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
                           builder: (context) => HomePage()));
-                    */
                   },
                 ),
               )),

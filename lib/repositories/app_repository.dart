@@ -1,5 +1,7 @@
 
 import 'package:http/http.dart' as http;
+import 'package:teashop/model/flash_post.dart';
+import 'package:teashop/model/image.dart';
 import 'package:teashop/model/option.dart';
 import '../model/category.dart';
 import '../model/post.dart';
@@ -26,6 +28,15 @@ class AppRepository extends DBModel {
 
     Map<String, dynamic> result = await parseJsonFromAssets('assets/data/posts.json');
     return Posts(
+        sliders: result['sliders'].map<Category>((item) {
+          return Category(
+            id: item['id'],
+            name: item['name'],
+            description: item['description'],
+            icon:  item['icon'],
+            image: item['image'],
+          );
+        }).toList(),
         most_orders: result['most_orders'].map<Post>((item) {
           return Post(
             id: item['id'],
@@ -41,6 +52,35 @@ class AppRepository extends DBModel {
             description: item['description'],
             icon:  item['icon'],
             image: item['image'],
+          );
+        }).toList(),
+        flash_items:  FlashPost(
+            caption: 'Flash Sales', 
+            hour: "15", 
+            minute: "30",
+            second: "15",
+            items:  result['flash_items'].map<Post>((item) {
+              return Post(
+                id: item['id'],
+                name: item['name'],
+                description: item['description'],
+                image: item['image'],
+                currency_unit: item['currency_unit'],
+                amount_unit: item['amount_unit'],
+                price: item['price'],
+              );
+            }).toList(),
+          
+        ),
+        featured_items: result['featured_items'].map<Post>((item) {
+          return Post(
+            id: item['id'],
+            name: item['name'],
+            description: item['description'],
+            image: item['image'],
+            currency_unit: item['currency_unit'],
+            amount_unit: item['amount_unit'],
+            price: item['price'],
           );
         }).toList(),
       
@@ -60,6 +100,55 @@ class AppRepository extends DBModel {
 
 
   }
+
+
+
+  Future<Posts> fetchFlashPosts(int id) async {
+    Map<String, dynamic> result = await parseJsonFromAssets('assets/data/posts.json');
+    return Posts(
+        
+        flash_items:  FlashPost(
+            caption: 'Flash Sales', 
+            hour: "15", 
+            minute: "30",
+            second: "15",
+            items:  result['flash_items'].map<Post>((item) {
+              return Post(
+                id: item['id'],
+                name: item['name'],
+                description: item['description'],
+                image: item['image'],
+                currency_unit: item['currency_unit'],
+                amount_unit: item['amount_unit'],
+                price: item['price'],
+              );
+            }).toList(),
+        ),  
+      );
+  }
+
+
+
+
+  Future<List<Post>> fetchSearchPosts(String searchString) async {
+    Map<String, dynamic> result = await parseJsonFromAssets('assets/data/search.json');
+    return  result['items'].map<Post>((item) {
+      return Post(
+        id: item['id'],
+        name: item['name'],
+        description: item['description'],
+        image: item['image'],
+        currency_unit: item['currency_unit'],
+        amount_unit: item['amount_unit'],
+        qty: item['qty'],
+        price: item['price'],
+        
+      );
+    }).toList();
+      
+  }
+
+
 
   Future<Posts> fetchOrderItems(int id) async {
     Map<String, dynamic> result = await parseJsonFromAssets('assets/data/order_items.json');
@@ -103,8 +192,6 @@ class AppRepository extends DBModel {
         }).toList(),
         
       );
-
-
   }
 
   Future<Post> fetchPost(int id) async {
@@ -119,6 +206,16 @@ class AppRepository extends DBModel {
       amount_unit: item['amount_unit'],
       qty: item['qty'],
       price: item['price'],
+
+      images : item['images'].map<Image>((option) {
+        return Image(
+          id: option['id'],
+          name: option['name'],
+          description: option['description'],
+          icon: option['icon'],
+          image: option['image']
+        );
+      }).toList(),
       options : item['options'].map<Option>((option) {
         return Option(
           id: option['id'],

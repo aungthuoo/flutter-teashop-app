@@ -38,6 +38,20 @@ class PostBloc extends Bloc<PostEvent, PostState> {
       yield PostLoading();
       final items = await appRepository.fetchPosts(1);
       yield PostsLoaded(items: items, cartItems: [] );
+    }else if (event is FetchFlashPostsEvent) {
+      print('FetchFlashPostsEvent fire');
+      yield PostLoading();
+      final items = await appRepository.fetchFlashPosts(1);
+      //yield FlashPostsLoaded(items: items, cartItems: event.cartItems );
+      yield PostsLoaded(items: items, cartItems: event.cartItems );
+
+    }else if (event is FetchSearchPostsEvent) {
+      print('FetchPostEvent fire');
+      yield PostLoading();
+      final items = await appRepository.fetchSearchPosts(event.searchString);
+      yield SearchLoaded(items: items);
+
+
     }else if (event is FetchOrderItemsEvent) {
       print('FetchPostEvent fire');
       yield PostLoading();
@@ -63,13 +77,12 @@ class PostBloc extends Bloc<PostEvent, PostState> {
 
       //Post item = (state as PostLoaded).item;
       double total = _calculateItemTotal(event.post);
-      List<Post> cartItems = (state as PostsLoaded).cartItems ?? []; 
+      List<Post> cartItems = event.cartItems ?? []; 
       final menuItem = event.post.copyWith(total: total);
       cartItems.add(
         menuItem
       ); 
-
-      yield PostsLoaded(items: (state as PostsLoaded).items, cartItems: cartItems, count: cartItems.length);
+      yield PostsLoaded(items: event.posts, cartItems: cartItems, count: cartItems.length);
     } else if (event is SetCartItemsEvent) {
       Header header = _calculateCartTotal(event.cartItems); 
       yield CartLoaded(cartHeader : header, cartItems: event.cartItems);

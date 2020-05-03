@@ -5,6 +5,7 @@ import './network_image.dart';
 import 'bloc/post_bloc.dart';
 import 'model/option.dart';
 import 'model/post.dart';
+import 'package:flutter_swiper/flutter_swiper.dart';
 
 
 class MenuItemPage extends StatelessWidget{
@@ -62,29 +63,28 @@ class MenuItemPage extends StatelessWidget{
                     ),
                     */
                     SliverToBoxAdapter(
-                                child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                Container(
-                                  height: 380,
-                                  alignment: Alignment.topCenter,
-                                  decoration: BoxDecoration(
-                                    /*
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: Colors.black38,
-                                        blurRadius: 30.0
-                                      )
-                                    ]
-                                    */
-                                  ),
-                                  child: SizedBox(
-                                    height: 350,
-                                    child: PNetworkImage(state.item.image, fit: BoxFit.cover,),
-                                  ),
-                                ),
-                              ],
-                            )),
+                      child: Container(
+                        height: 250.0,
+                        padding: EdgeInsets.symmetric(horizontal: 0.0),
+                        child: Swiper(
+                          autoplay: true,
+                          
+                          itemBuilder: (BuildContext context,int index){
+                            return new PNetworkImage(state.item.images[index].image,fit: BoxFit.cover,);
+                          },
+                          itemCount: state.item.images.length,
+                          
+                          /*
+                          itemBuilder: (BuildContext context,int index){
+                            return new Image.network("http://via.placeholder.com/350x150",fit: BoxFit.fill,);
+                          },
+                          itemCount: 3,
+                          */
+                          pagination: new SwiperPagination(),
+                        ),
+                      ),
+                    ),
+                    
                     new SliverList(
                         delegate: _buildSliverList(context, state.item)),
                   ]
@@ -200,6 +200,7 @@ class MenuItemPage extends StatelessWidget{
         .map((optionGroup) => (optionGroup.type == 'radio')
             ? list.add(ExpansionTile(
                 //title: Text('${optionGroup.title} '),
+                initiallyExpanded: true,
                 title: new RichText(
                   text: new TextSpan(
                     style: new TextStyle(
@@ -236,7 +237,7 @@ class MenuItemPage extends StatelessWidget{
                                 BlocProvider.of<PostBloc>(context).add(
                                     SelectOptionItemEvent(optionGroup.id, i));
                               },
-                              activeColor: Colors.red,
+                              activeColor: Colors.orange,
                               secondary: Text('Ks.${optionItem.price}')
                               //selected: true,
                               ),
@@ -284,7 +285,7 @@ class MenuItemPage extends StatelessWidget{
                             } 
                             
                           },
-                          activeColor: Colors.red,
+                          activeColor: Colors.orange,
                           secondary: Text('${optionItem.name}'));
                       return MapEntry(
                         index,
