@@ -406,7 +406,7 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                 ),
                               ),
-                              IconButton(icon: Icon(Icons.favorite_border), onPressed: (){
+                              IconButton(icon: Icon(Icons.favorite_border, color: Colors.black38,), onPressed: (){
                                 /*
                                 Navigator.push(context, MaterialPageRoute(
                                           builder: (_) => SearchPage()
@@ -415,16 +415,29 @@ class _HomePageState extends State<HomePage> {
                               },),
                             ],
                           ),
-                          Text(
-                              'Ks ${formatter.format( posts.items[i].price) }',
-                              maxLines: 2,
-                              overflow: TextOverflow.ellipsis,
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 12,
-                                color: Colors.orange
-                              ),
+                          new RichText(
+                            text: new TextSpan(
+                              //text: 'This item costs ',
+                              children: <TextSpan>[
+                                new TextSpan(
+                                  text: 'Ks ${formatter.format( posts.items[i].price) }',
+                                  style: new TextStyle(
+                                    color: Colors.black,
+                                    decoration: TextDecoration.lineThrough,
+                                    fontSize: 16.0
+                                  ),
+                                ),
+                                new TextSpan(
+                                  text: '   Ks ${formatter.format( posts.items[i].price - 50) }',
+                                  style: new TextStyle(
+                                    color: Colors.deepOrange,
+                                    fontSize: 16.0
+                                  ),
+                                ),
+                              ],
                             ),
+                          ),
+                          
                         ],
                       ),
                     ),
@@ -633,9 +646,12 @@ class _HomePageState extends State<HomePage> {
     return BlocBuilder<PostBloc, PostState>(
       builder: (context, state) {
         if (state is PostInitial) {
+          /*
           return Center(
             child: CircularProgressIndicator(),
           );
+          */
+          return buildLoading(); 
         }
         if (state is PostError) {
           return Center(
@@ -643,9 +659,12 @@ class _HomePageState extends State<HomePage> {
           );
         }
         if (state is PostLoading) {
+          /*
           return Center(
             child: CircularProgressIndicator(),
           );
+          */
+          return buildLoading(); 
         }
         if (state is PostsLoaded) {
           return Scaffold(
@@ -751,6 +770,26 @@ class _HomePageState extends State<HomePage> {
                       )),
                   ),
                   _buildAllItems(state.items, state.cartItems),
+                  SliverToBoxAdapter(
+                      child: Center(child: Padding(
+                        padding: const EdgeInsets.only(top : 20.0, bottom: 15.0),
+                        //child: Text('Show All', style: TextStyle(fontWeight: FontWeight.w400, fontSize: 15.0),),
+                        child: InkWell(
+                            child: Padding(
+                              padding: const EdgeInsets.only(bottom : 15.0),
+                              child: Text('Show All', style: TextStyle(fontWeight: FontWeight.w400, fontSize: 15.0),),
+                            ),
+                            onTap: () {
+                              
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => ListingPage(cartItems: state.cartItems,)),
+                              ); 
+                            },
+                        ),
+                      )),
+                  ),
                   
                 ],
               ),
@@ -784,6 +823,19 @@ class _HomePageState extends State<HomePage> {
         }
         
       },
+    );
+  }
+
+
+
+  Widget buildLoading() {
+    return Container(
+      decoration: new BoxDecoration(color: Colors.white),
+      child: new Center(
+        child: new CircularProgressIndicator(
+          valueColor: AlwaysStoppedAnimation<Color>(Colors.orange),
+        ),
+      ),
     );
   }
 
