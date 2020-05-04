@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:teashop/model/post.dart';
+import 'package:ecommerce/model/post.dart';
 
 class Option extends Equatable {
 

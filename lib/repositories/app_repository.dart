@@ -1,8 +1,8 @@
 
 import 'package:http/http.dart' as http;
-import 'package:teashop/model/flash_post.dart';
-import 'package:teashop/model/image.dart';
-import 'package:teashop/model/option.dart';
+import 'package:ecommerce/model/flash_post.dart';
+import 'package:ecommerce/model/image.dart';
+import 'package:ecommerce/model/option.dart';
 import '../model/category.dart';
 import '../model/post.dart';
 import '../model/posts.dart';

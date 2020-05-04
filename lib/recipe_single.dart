@@ -5,7 +5,7 @@
   
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:teashop/confirm_order.dart';
+import 'package:ecommerce/confirm_order.dart';
 import 'assets/assets.dart';
 import './recipe_details.dart';
 import './network_image.dart';

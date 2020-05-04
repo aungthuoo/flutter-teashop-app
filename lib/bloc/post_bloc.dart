@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:teashop/model/header.dart';
+import 'package:ecommerce/model/header.dart';
 import '../model/post.dart';
 import '../model/posts.dart';
 import 'package:equatable/equatable.dart';
