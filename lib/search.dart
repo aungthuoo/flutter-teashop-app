@@ -4,13 +4,23 @@ import 'package:http/http.dart' as http;
 import 'bloc/post_bloc.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
+import 'menu_item.dart';
+import 'model/post.dart';
+import 'model/posts.dart';
+
 class SearchPage extends StatelessWidget {
   // This widget is the root of your application.
+  final List<Post> cartItems;
+
+  SearchPage({Key key, this.cartItems}) : super(key: key);
+
+
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) =>
-          PostBloc(httpClient: http.Client())..add(FetchSearchPostsEvent('')),
+          PostBloc(httpClient: http.Client())..add(FetchSearchPostsEvent( '' , this.cartItems)),
       child: MyHomePage(title: 'Search Stock')
     ); 
 
@@ -62,6 +72,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
   }
 
+
+  _getRequests(Post post, List<Post> cartItems, Posts posts) async {
+    BlocProvider.of<PostBloc>(context)
+        .add(AddCartItemEvent('this is note ', post, cartItems, posts));
+  }
+  
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<PostBloc, PostState>(
@@ -82,7 +98,7 @@ class _MyHomePageState extends State<MyHomePage> {
           );
         }
 
-        if (state is SearchLoaded) {
+        if (state is PostsLoaded) {
           return new Scaffold(
             appBar: new AppBar(
               title: new Text(widget.title),
@@ -94,7 +110,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     padding: const EdgeInsets.all(8.0),
                     child: TextField(
                       onChanged: (value) {
-                        filterSearchResults(value);
+                        //filterSearchResults(value);
+                        BlocProvider.of<PostBloc>(context)
+                          .add(SearchPostEvent(editingController.text, state.cartItems));
                       },
                       controller: editingController,
                       decoration: InputDecoration(
@@ -109,11 +127,11 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: ListView.builder(
                       shrinkWrap: true,
                       itemExtent: 80.0,
-                      itemCount: state.items.length,
+                      itemCount: state.items.items.length,
                       itemBuilder: (context, index) {
                         return ListTile(
                           leading: CachedNetworkImage(
-                            imageUrl: '${state.items[index].image}', 
+                            imageUrl: '${state.items.items[index].image}', 
                             placeholder: (context, url) => Center(child: CircularProgressIndicator()),
                             errorWidget: (context, url, error) => Image.asset('assets/placeholder.jpg',fit: BoxFit.cover,),
                             fit: BoxFit.cover,
@@ -124,8 +142,10 @@ class _MyHomePageState extends State<MyHomePage> {
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
-                              Text('${state.items[index].name}'),
-                              Text('Ks.${state.items[index].price}' , 
+                              Text('${state.items.items[index].name}', 
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,),
+                              Text('Ks.${state.items.items[index].price}' , 
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 12,
@@ -133,7 +153,14 @@ class _MyHomePageState extends State<MyHomePage> {
                               ),),
                             ],
                           ),
-                          onTap: () {},
+                          onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => MenuItemPage(id : state.items.items[index].id )),
+                        ) //.then((menuItem)=>_getRequests(menuItem)
+                            .then((menuItem) => (menuItem != null)
+                                ? _getRequests(menuItem, state.cartItems, state.items)
+                                : null),
                         );
                       },
                     ),

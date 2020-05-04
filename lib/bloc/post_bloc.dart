@@ -50,6 +50,14 @@ class PostBloc extends Bloc<PostEvent, PostState> {
       final items = await appRepository.fetchPopularListing(1);
       //yield FlashPostsLoaded(items: items, cartItems: event.cartItems );
       yield PostsLoaded(items: items, cartItems: event.cartItems );
+
+    }else if (event is FetchAllPostsEvent) {
+      print('FetchPostEvent fire');
+      yield PostLoading();
+      final items = await appRepository.fetchAllPosts(1);
+      yield PostsLoaded(items: items, cartItems: event.cartItems );
+
+
     }else if (event is FetchPostsByCategoryEvent) {
       print('FetchPostsByCategoryEvent fire');
       yield PostLoading();
@@ -60,7 +68,8 @@ class PostBloc extends Bloc<PostEvent, PostState> {
       print('FetchPostEvent fire');
       yield PostLoading();
       final items = await appRepository.fetchSearchPosts(event.searchString);
-      yield SearchLoaded(items: items);
+      //yield SearchLoaded(items: items);
+      yield PostsLoaded(items: items, cartItems: event.cartItems );
     }else if (event is FetchWishPostsEvent) {
       print('FetchPostEvent fire');
       yield PostLoading();
@@ -95,10 +104,18 @@ class PostBloc extends Bloc<PostEvent, PostState> {
       //Post item = (state as PostLoaded).item;
       double total = _calculateItemTotal(event.post);
       List<Post> cartItems = event.cartItems ?? []; 
-      final menuItem = event.post.copyWith(total: total);
+      final menuItem = event.post.copyWith(total: total, index: cartItems.length);
+
       cartItems.add(
         menuItem
       ); 
+      yield PostsLoaded(items: event.posts, cartItems: cartItems, count: cartItems.length);
+    } else if (event is UpdateCartItemEvent) {
+
+      //Post item = (state as PostLoaded).item;
+      //double total = _calculateItemTotal(event.post);
+      List<Post> cartItems = event.cartItems ?? []; 
+      
       yield PostsLoaded(items: event.posts, cartItems: cartItems, count: cartItems.length);
     } else if (event is SetCartItemsEvent) {
       Header header = _calculateCartTotal(event.cartItems); 
@@ -108,8 +125,22 @@ class PostBloc extends Bloc<PostEvent, PostState> {
       yield PostLoading();
       final item = await appRepository.fetchPost(event.id );
       yield PostLoaded(item: item);
-    
-    
+    }else if (event is SearchPostEvent) {
+      print('FetchPostEvent fire');
+      yield PostLoading();
+      final items = await appRepository.searchPosts(event.searchString);
+      //yield SearchLoaded(items: items);
+      yield PostsLoaded(items: items, cartItems: event.cartItems );
+    } else if (event is RemoveCartItemEvent) {
+      //Header header = _calculateCartTotal(event.index); 
+
+      final tempMenuItems = (state as CartLoaded)
+            .cartItems
+            .where((item) => item.index != event.index)
+            .toList();
+
+        Header header = _calculateCartTotal(tempMenuItems); 
+      yield CartLoaded(cartHeader : header, cartItems: tempMenuItems);
     }
   }
 

@@ -74,10 +74,13 @@ flutter:
     - assets/data/category5.json
 
     - assets/data/popular_listing.json
+    - assets/data/all_posts.json
 
     - assets/data/wish_items.json
     - assets/data/search.json
     - assets/data/order_items.json
+
+    - assets/order-success.gif
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
   # For details regarding adding assets from package dependencies, see

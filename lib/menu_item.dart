@@ -184,7 +184,7 @@ class MenuItemPage extends StatelessWidget{
            
                   },
                   child: Text(
-                    "ပေါင်းထည့်မည်",
+                    "Add To Cart",
                   ),
                 ),
       ),

@@ -22,7 +22,7 @@ class PostListingPage extends StatelessWidget {
     Widget build(BuildContext context) {
       return BlocProvider(
         create: (context) =>
-            PostBloc(httpClient: http.Client())..add(FetchFlashPostsEvent(3, 1, 'Popular Sales', this.cartItems)),
+            PostBloc(httpClient: http.Client())..add(FetchAllPostsEvent(1, this.cartItems)),
         child: HomePage(),
       ); 
     }
@@ -64,7 +64,7 @@ class _HomePageState extends State<HomePage> {
 
 
     List<Widget> widgets = new List<Widget>(); 
-    for(var i = 0 ; i < posts.flash_items.items.length; i++){
+    for(var i = 0 ; i < posts.items.length; i++){
       widgets.add(
         
         Container(
@@ -77,7 +77,7 @@ class _HomePageState extends State<HomePage> {
               onTap: () => Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => MenuItemPage(id : posts.flash_items.items[i].id )),
+                              builder: (context) => MenuItemPage(id : posts.items[i].id )),
                         ) //.then((menuItem)=>_getRequests(menuItem)
                             .then((menuItem) => (menuItem != null)
                                 ? _getRequests(menuItem, cartItems, posts)
@@ -94,7 +94,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                       child: CachedNetworkImage(
                         imageUrl:
-                            "${posts.flash_items.items[i].image}",
+                            "${posts.items[i].image}",
                         placeholder: (context, url) => Container(
                           height: 110,
                           width: double.infinity,
@@ -122,7 +122,7 @@ class _HomePageState extends State<HomePage> {
                            MainAxisAlignment.spaceBetween,
                         children: <Widget>[
                           Text(
-                            posts.flash_items.items[i].name,
+                            posts.items[i].name,
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,
                             style: TextStyle(
@@ -131,7 +131,7 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                           Text(
-                              'Ks ${formatter.format( posts.flash_items.items[i].price) }',
+                              'Ks ${formatter.format( posts.items[i].price) }',
                               maxLines: 2,
                               overflow: TextOverflow.ellipsis,
                               style: TextStyle(
@@ -183,7 +183,11 @@ class _HomePageState extends State<HomePage> {
             appBar: AppBar(
               backgroundColor: Colors.orange,
               title: Text('Home'),
-              
+              leading: IconButton(
+                icon: Icon(Icons.arrow_back, color: Colors.white),
+                //onPressed: () => Navigator.of(context).pop(),
+                onPressed: () => Navigator.pop(context, state.cartItems),
+              ), 
               elevation: 0,
               actions: <Widget>[
                 
@@ -217,7 +221,27 @@ class _HomePageState extends State<HomePage> {
               items: <BottomNavigationBarItem>[
                 BottomNavigationBarItem(icon: Icon(Icons.home), title: Text('Home')),
                 BottomNavigationBarItem(icon: Icon(Icons.message), title: Text('Messages')),
-                BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), title: Text('Cart')),
+                BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), 
+                  title: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Text('Cart'),
+                      (state.cartItems.length > 0 ) ? 
+                      Container(
+                        //color: Colors.red,
+                        decoration: BoxDecoration(
+                          color: Colors.red,
+                          shape: BoxShape.circle
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                          child: Text(' ${state.cartItems.length}' , 
+                            style: TextStyle(fontWeight: FontWeight.w400, fontSize: 15.0, color: Colors.white),),
+                        )
+                      ): Container(width: 0 , height: 0 )
+                    ],
+                  )
+                ),
                 BottomNavigationBarItem(icon: Icon(Icons.person), title: Text('Account')),
               ],
               currentIndex: 0,

@@ -1,13 +1,13 @@
-import 'package:ecommerce/voucher_page.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
 
 import 'bloc/post_bloc.dart';
-import 'login.dart';
+import 'main.dart';
 import 'model/post.dart';
-class ConfirmOrderPage extends StatelessWidget{
+class VoucherPage extends StatelessWidget{
   final formatter = new NumberFormat("#,###");
   static final String path = "lib/src/pages/ecommerce/confirm_order1.dart";
   final String address = "Chabahil, Kathmandu";
@@ -16,7 +16,7 @@ class ConfirmOrderPage extends StatelessWidget{
   final double delivery = 100;
 
   final List<Post> cartItems; 
-    ConfirmOrderPage(
+    VoucherPage(
       {Key key, this.cartItems}) : super(key: key);
 
 
@@ -43,16 +43,39 @@ class ConfirmOrderPage extends StatelessWidget{
               return new Scaffold(
                 appBar: AppBar(
                   backgroundColor: Colors.orangeAccent,
-                  title: Text('Your Cart'),
+                  title: Text('Your Voucher'),
                   elevation: 0,
                   leading: IconButton(
                     icon: Icon(Icons.arrow_back, color: Colors.white),
                     //onPressed: () => Navigator.of(context).pop(),
-                    onPressed: () => Navigator.pop(context, state.cartItems),
+                    onPressed: () => Navigator.pushReplacement(context, MaterialPageRoute(
+                      builder: (_) => MyApp()
+                    ))
                   ), 
                 ),
                 body: Container(
                     child: Column(children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.all(30.0),
+                    child: Image(
+                      image: AssetImage('assets/order-success.gif'),
+                      //width: 55.0,
+                      height: 105.0,
+                      fit: BoxFit.fitHeight,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical:  15.0 ),
+                    child: Text(
+                      'Got your order',
+                      style: TextStyle(
+                          fontFamily: 'ZawgyiOne',
+                          fontSize: 23.0,
+                          decoration: TextDecoration.none,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.black87),
+                    ),
+                  ),
                   Expanded(
                     child: MediaQuery.removePadding(
                       context: context,
@@ -204,37 +227,7 @@ class ConfirmOrderPage extends StatelessWidget{
                                   ),
                                 ],
                               ),
-                              Padding(
-                                padding:
-                                    EdgeInsets.only(top: 15.0, bottom: 0.0),
-                                child: SizedBox(
-                                    width: double.infinity,
-                                    // height: double.infinity,
-                                    child: FlatButton(
-                                      onPressed: () {
-                                        //Navigator.pop(context);
-                                        
-                                        Navigator.pushReplacement(context, MaterialPageRoute(
-                                          builder: (_) => VoucherPage(cartItems: state.cartItems)
-                                        ));
-                                        
-                                      },
-                                      color: Colors.orange,
-                                      textColor: Colors.white,
-                                      disabledColor: Colors.grey,
-                                      disabledTextColor: Colors.black,
-                                      padding: EdgeInsets.all(8.0),
-                                      splashColor: Colors.orangeAccent,
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(4.0),
-                                        child: Text(
-                                          "Place Order",
-                                          style: TextStyle(fontSize: 18.0),
-                                        ),
-                                      ),
-                                      
-                                    )),
-                              ),
+                              
                             ],
                           ),
                         ),
@@ -526,14 +519,6 @@ class ConfirmOrderPage extends StatelessWidget{
               ],
             ),
             flex: 2,
-          ),
-          IconButton(
-            icon: Icon(Icons.remove_circle),
-            color: Colors.red,
-            onPressed: () {
-              BlocProvider.of<PostBloc>(context).add(
-                                    RemoveCartItemEvent(item.index));
-            },
           ),
         ],
       ),

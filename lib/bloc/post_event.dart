@@ -10,6 +10,11 @@ class FetchPostsEvent extends PostEvent {
   FetchPostsEvent(this.id) : super([id]);
 }
 
+class FetchAllPostsEvent extends PostEvent {
+  final int id;
+  final List<Post> cartItems; 
+  FetchAllPostsEvent(this.id, this.cartItems) : super([id, cartItems]);
+}
 
 
 class FetchPopularListingEvent extends PostEvent {
@@ -38,14 +43,26 @@ class FetchPostsByCategoryEvent extends PostEvent {
 
 class FetchSearchPostsEvent extends PostEvent {
   final String searchString; 
-  FetchSearchPostsEvent(this.searchString) : super([searchString]);
+  final List<Post> cartItems; 
+  FetchSearchPostsEvent(this.searchString, this.cartItems) : super([searchString, cartItems]);
 }
 
 
 
+class RemoveCartItemEvent extends PostEvent {
+  final int index; 
+  RemoveCartItemEvent(this.index) : super([index]);
+}
+
 class FetchWishPostsEvent extends PostEvent {
   final String searchString; 
   FetchWishPostsEvent(this.searchString) : super([searchString]);
+}
+
+class SearchPostEvent extends PostEvent {
+  final String searchString; 
+  final List<Post> cartItems; 
+  SearchPostEvent(this.searchString, this.cartItems) : super([searchString, cartItems]);
 }
 
 class FetchDataEvent extends PostEvent {
@@ -89,6 +106,13 @@ class AddCartItemEvent extends PostEvent {
   final Posts posts; 
   AddCartItemEvent(this.note, this.post, this.cartItems, this.posts)
       : super([note, post, cartItems, posts]);
+}
+
+class UpdateCartItemEvent extends PostEvent {
+  final List<Post> cartItems; 
+  final Posts posts; 
+  UpdateCartItemEvent(this.cartItems, this.posts)
+      : super([cartItems, posts]);
 }
 
 class SetCartItemsEvent extends PostEvent {

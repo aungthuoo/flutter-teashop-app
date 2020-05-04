@@ -5,6 +5,7 @@ import 'option.dart';
 
 class Post extends Equatable {
   final int id;
+  final int index; 
   final String image;
   final String name;
   final String description;
@@ -21,6 +22,7 @@ class Post extends Equatable {
 
   Post(
       {this.id,
+      this.index, 
       this.image,
       this.name,
       this.description,
@@ -34,7 +36,7 @@ class Post extends Equatable {
       this.rating, this.is_selected, this.options});
 
   @override
-  List<Object> get props => [id, name, description, image, qty, price, total, rating, note, options, images, is_selected];
+  List<Object> get props => [id, index, name, description, image, qty, price, total, rating, note, options, images, is_selected];
 
   Post copyWith(
       {int qty,
@@ -51,6 +53,7 @@ class Post extends Equatable {
       int index}) {
     return Post(
         id: this.id,
+        index : index ?? this.index, 
         image: this.image,
         name: this.name,
         description: this.description,

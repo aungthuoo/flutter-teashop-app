@@ -181,12 +181,21 @@ class _HomePageState extends State<HomePage> {
                     /*
                     BlocProvider.of<PostBloc>(context).add(
                         FetchFlashPostsEvent(2, 1, 'Flash Sales'));
-                    */
+                    
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => PostListingPage(cartItems: cartItems,)),
+                          builder: (context) => PostListingPage(cartItems: cartItems,))
                     ); 
+                    */
+
+
+                    Navigator.push(context, MaterialPageRoute(
+                                builder: (_) => PostListingPage(cartItems: cartItems)
+                              ))
+                              .then((cartItems) => (cartItems != null)
+                                          ? _getUpdateMenuItems(cartItems, posts)
+                                          : null);
                   },
               ),
               
@@ -335,6 +344,12 @@ class _HomePageState extends State<HomePage> {
         .add(AddCartItemEvent('this is note ', post, cartItems, posts));
   }
 
+
+
+  _getUpdateMenuItems(List<Post> cartItems, Posts posts){
+    BlocProvider.of<PostBloc>(context)
+        .add(UpdateCartItemEvent(cartItems, posts));
+  }
 
   Widget _buildAllItems(Posts posts, List<Post> cartItems){
     
@@ -614,7 +629,7 @@ class _HomePageState extends State<HomePage> {
 
   }
 
-  Widget _buildCategoriesGrid(List<Category> categories, List<Post> cartItems) {
+  Widget _buildCategoriesGrid(List<Category> categories, List<Post> cartItems, Posts posts) {
     return Container(
       height: 125.0,
       child: GridView.builder(
@@ -627,18 +642,23 @@ class _HomePageState extends State<HomePage> {
         ),
         itemBuilder: (_, int index){
           return GestureDetector(
+            /*
             onTap: (){
               print(categories[index]);
-              /*
-              BlocProvider.of<PostBloc>(context).add(
-                        FetchFlashPostsEvent(2, categories[index].id, 'Category', cartItems)); 
-              */
+             
               Navigator.push(
                 context,
                 MaterialPageRoute(
                     builder: (context) => PostListingByCategoryPage(id: categories[index].id, cartItems: cartItems,)),
               ); 
             },
+            */
+            onTap: () => Navigator.push(context, MaterialPageRoute(
+                                  builder: (_) => PostListingByCategoryPage(id: categories[index].id, cartItems: cartItems,)
+                                ))
+                                .then((cartItems) => (cartItems != null)
+                                            ? _getUpdateMenuItems(cartItems, posts)
+                                            : null),
             child: Column(
               children: <Widget>[
                 CircleAvatar(
@@ -663,6 +683,7 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -696,13 +717,12 @@ class _HomePageState extends State<HomePage> {
               title: Text('eCommerce'),
               elevation: 0,
               actions: <Widget>[
-                
                 IconButton(icon: Icon(Icons.search), onPressed: (){
-                  
+                  /*
                   Navigator.push(context, MaterialPageRoute(
                             builder: (_) => SearchPage()
                           ));
-                  
+                  */
                 },),
                 IconButton(icon: Icon(Icons.filter_list), onPressed: (){
                   /*
@@ -729,7 +749,7 @@ class _HomePageState extends State<HomePage> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          _buildCategoriesGrid(state.items.categories, state.cartItems),
+                          _buildCategoriesGrid(state.items.categories, state.cartItems, state.items),
                         ]
                       ),
                   ),
@@ -763,17 +783,29 @@ class _HomePageState extends State<HomePage> {
                                   padding: const EdgeInsets.all(15.0),
                                   child: Text("Show All", style: TextStyle(color: Colors.orange),),
                                 ),
+                                onTap: () => Navigator.push(context, MaterialPageRoute(
+                                  builder: (_) => PopularListingPage(cartItems: state.cartItems)
+                                ))
+                                .then((cartItems) => (cartItems != null)
+                                            ? _getUpdateMenuItems(cartItems, state.items)
+                                            : null),
+                                /*
+                                onTap: () => Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => PopularListingPage(cartItems: state.cartItems,))
+                                      
+                                ) 
+                                
                                 onTap: () {
-                                  /*
-                                  BlocProvider.of<PostBloc>(context).add(
-                                      FetchFlashPostsEvent(3, 1, 'Popular Sales'));
-                                  */
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) => PopularListingPage(cartItems: state.cartItems,)),
+                                        
                                   ); 
                                 },
+                                */
                             ),
                           ), 
 
@@ -803,12 +835,19 @@ class _HomePageState extends State<HomePage> {
                               child: Text('Show All', style: TextStyle(fontWeight: FontWeight.w400, fontSize: 15.0),),
                             ),
                             onTap: () {
-                              
+                              /*
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) => PostListingPage(cartItems: state.cartItems,)),
                               ); 
+                              */
+                              Navigator.push(context, MaterialPageRoute(
+                                builder: (_) => PostListingPage(cartItems: state.cartItems)
+                              ))
+                              .then((cartItems) => (cartItems != null)
+                                          ? _getUpdateMenuItems(cartItems, state.items)
+                                          : null);
                             },
                         ),
                       )),
@@ -821,7 +860,27 @@ class _HomePageState extends State<HomePage> {
               items: <BottomNavigationBarItem>[
                 BottomNavigationBarItem(icon: Icon(Icons.home), title: Text('Home')),
                 BottomNavigationBarItem(icon: Icon(Icons.favorite_border), title: Text('Wish List')),
-                BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), title: Text('Cart')),
+                BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), 
+                  title: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Text('Cart'),
+                      (state.cartItems.length > 0 ) ? 
+                      Container(
+                        //color: Colors.red,
+                        decoration: BoxDecoration(
+                          color: Colors.red,
+                          shape: BoxShape.circle
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                          child: Text(' ${state.cartItems.length}' , 
+                            style: TextStyle(fontWeight: FontWeight.w400, fontSize: 15.0, color: Colors.white),),
+                        )
+                      ): Container(width: 0 , height: 0 )
+                    ],
+                  )
+                ),
                 BottomNavigationBarItem(icon: Icon(Icons.person), title: Text('Account')),
               ],
               currentIndex: 0,
@@ -836,7 +895,10 @@ class _HomePageState extends State<HomePage> {
                   }else if(index == 2){
                     Navigator.push(context, MaterialPageRoute(
                             builder: (_) => ConfirmOrderPage(cartItems: state.cartItems)
-                          ));
+                          ))
+                          .then((cartItems) => (cartItems != null)
+                                      ? _getUpdateMenuItems(cartItems, state.items)
+                                      : null);
                   }else if(index == 3){
                     Navigator.push(context, MaterialPageRoute(
                             builder: (_) => ProfilePage()

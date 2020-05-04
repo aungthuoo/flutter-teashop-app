@@ -184,7 +184,11 @@ class _HomePageState extends State<HomePage> {
             appBar: AppBar(
               backgroundColor: Colors.orange,
               title: Text('Home'),
-              
+              leading: IconButton(
+                icon: Icon(Icons.arrow_back, color: Colors.white),
+                //onPressed: () => Navigator.of(context).pop(),
+                onPressed: () => Navigator.pop(context, state.cartItems),
+              ), 
               elevation: 0,
               actions: <Widget>[
                 
@@ -218,7 +222,27 @@ class _HomePageState extends State<HomePage> {
               items: <BottomNavigationBarItem>[
                 BottomNavigationBarItem(icon: Icon(Icons.home), title: Text('Home')),
                 BottomNavigationBarItem(icon: Icon(Icons.message), title: Text('Messages')),
-                BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), title: Text('Cart')),
+                BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), 
+                  title: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Text('Cart'),
+                      (state.cartItems.length > 0 ) ? 
+                      Container(
+                        //color: Colors.red,
+                        decoration: BoxDecoration(
+                          color: Colors.red,
+                          shape: BoxShape.circle
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                          child: Text(' ${state.cartItems.length}' , 
+                            style: TextStyle(fontWeight: FontWeight.w400, fontSize: 15.0, color: Colors.white),),
+                        )
+                      ): Container(width: 0 , height: 0 )
+                    ],
+                  )
+                ),
                 BottomNavigationBarItem(icon: Icon(Icons.person), title: Text('Account')),
               ],
               currentIndex: 0,
