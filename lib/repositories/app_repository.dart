@@ -130,6 +130,32 @@ class AppRepository extends DBModel {
 
 
 
+  Future<Posts> fetchPostsByCategory(int id) async {
+    String fileName = 'category${id}.json'; 
+    Map<String, dynamic> result = await parseJsonFromAssets('assets/data/$fileName');
+
+    return Posts(
+        flash_items:  FlashPost(
+            caption: 'Cagegory - ', 
+            items:  result['items'].map<Post>((item) {
+              return Post(
+                id: item['id'],
+                name: item['name'],
+                description: item['description'],
+                image: item['image'],
+                currency_unit: item['currency_unit'],
+                amount_unit: item['amount_unit'],
+                price: item['price'],
+              );
+            }).toList(),
+        ),  
+      );
+  }
+
+
+
+
+
   Future<List<Post>> fetchSearchPosts(String searchString) async {
     Map<String, dynamic> result = await parseJsonFromAssets('assets/data/search.json');
     return  result['items'].map<Post>((item) {
@@ -147,6 +173,27 @@ class AppRepository extends DBModel {
     }).toList();
       
   }
+
+
+
+  Future<List<Post>> fetchWishPosts(String searchString) async {
+    Map<String, dynamic> result = await parseJsonFromAssets('assets/data/wish_items.json');
+    return  result['items'].map<Post>((item) {
+      return Post(
+        id: item['id'],
+        name: item['name'],
+        description: item['description'],
+        image: item['image'],
+        currency_unit: item['currency_unit'],
+        amount_unit: item['amount_unit'],
+        qty: item['qty'],
+        price: item['price'],
+        
+      );
+    }).toList();
+      
+  }
+
 
 
 
@@ -195,8 +242,8 @@ class AppRepository extends DBModel {
   }
 
   Future<Post> fetchPost(int id) async {
-
-    Map<String, dynamic> item = await parseJsonFromAssets('assets/data/post.json');
+    String fileName = 'post${id}.json'; 
+    Map<String, dynamic> item = await parseJsonFromAssets('assets/data/$fileName');
     return Post(
       id: item['id'],
       name: item['name'],

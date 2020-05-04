@@ -53,6 +53,27 @@ flutter:
     - assets/app-icon.jpg
     - assets/data/posts.json
     - assets/data/post.json
+    - assets/data/post1.json
+    - assets/data/post2.json
+    - assets/data/post3.json
+    - assets/data/post4.json
+    - assets/data/post5.json
+    - assets/data/post6.json
+    - assets/data/post7.json
+    - assets/data/post8.json
+    - assets/data/post9.json
+    - assets/data/post10.json
+    - assets/data/post11.json
+    - assets/data/post12.json
+    - assets/data/post13.json
+
+    - assets/data/category1.json
+    - assets/data/category2.json
+    - assets/data/category3.json
+    - assets/data/category4.json
+    - assets/data/category5.json
+
+    - assets/data/wish_items.json
     - assets/data/search.json
     - assets/data/order_items.json
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -18,10 +18,23 @@ class FetchFlashPostsEvent extends PostEvent {
   FetchFlashPostsEvent(this.type, this.id, this.caption, this.cartItems) : super([type, id, caption, cartItems]);
 }
 
+class FetchPostsByCategoryEvent extends PostEvent {
+  final int id;
+  final String caption; 
+  final List<Post> cartItems; 
+  FetchPostsByCategoryEvent(this.id, this.caption, this.cartItems) : super([id, caption, cartItems]);
+}
 
 class FetchSearchPostsEvent extends PostEvent {
   final String searchString; 
   FetchSearchPostsEvent(this.searchString) : super([searchString]);
+}
+
+
+
+class FetchWishPostsEvent extends PostEvent {
+  final String searchString; 
+  FetchWishPostsEvent(this.searchString) : super([searchString]);
 }
 
 class FetchDataEvent extends PostEvent {

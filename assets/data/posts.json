@@ -4,342 +4,354 @@
       "index": 0,
       "name": "လျှပ်စစ်ပစ္စည်းများ",
       "description": "Consequat mollit elit excepteur tempor commodo sunt excepteur mollit reprehenderit incididunt irure do dolore cillum. Labore nisi nulla in ad exercitation elit. Minim fugiat id ad elit officia esse laborum officia amet adipisicing qui et cupidatat sunt. Magna velit do sit aute. Eiusmod minim nulla fugiat ea nisi consectetur Lorem ex qui consequat laborum tempor. Aute eiusmod occaecat consectetur aliqua ea quis enim ullamco et magna irure.\r\n",
-      "icon": "", 
+      "icon": "",
       "image": "https://softwarezay.com/sample_images/ecommerce/sliders/slide1.jpeg"
     },
     {
       "index": 1,
       "name": "အိမ်သုံးပစ္စည်းမျာ",
       "description": "Minim veniam mollit id nostrud eu aliqua ad ullamco nulla nulla Lorem deserunt ipsum labore. Veniam est aute fugiat veniam qui incididunt Lorem duis aute eu irure consequat. Consequat non laboris enim do proident proident occaecat cupidatat incididunt. Aliqua laboris esse dolore pariatur. Exercitation consequat consequat laborum adipisicing ex commodo est.\r\n",
-      "icon": "", 
+      "icon": "",
       "image": "https://softwarezay.com/sample_images/ecommerce/sliders/slide2.jpeg"
     },
     {
       "index": 2,
       "name": "ကျန်းမာရေးနှင် အလှအပရေးရာ",
       "description": "Dolore ad cillum ex est commodo id pariatur. Sunt non pariatur ad excepteur ut eu nisi magna. Dolore laboris irure amet in ut consequat cupidatat consectetur sunt aliquip nostrud tempor amet. Laboris eu deserunt consequat tempor aute proident cupidatat sint irure ut et occaecat velit laborum. Dolor adipisicing eiusmod dolore in voluptate elit non fugiat nulla elit cupidatat sunt velit.\r\n",
-      "icon": "", 
+      "icon": "",
       "image": "https://softwarezay.com/sample_images/ecommerce/sliders/slide3.jpeg"
     },
     {
       "index": 3,
       "name": "အမျိုးသမီးဖက်ရှင်",
       "description": "Ipsum excepteur sint incididunt mollit eiusmod sit est enim reprehenderit ea elit. Ea eiusmod tempor cillum voluptate nulla ipsum sint nostrud ad ex commodo deserunt proident ipsum. Cupidatat nulla proident commodo voluptate sunt nostrud incididunt laborum labore.\r\n",
-      "icon": "", 
+      "icon": "",
       "image": "https://softwarezay.com/sample_images/ecommerce/sliders/slide4.jpeg"
     },
     {
       "index": 4,
       "name": "အမျိုးသားဖက်ရှင်",
       "description": "Ipsum excepteur sint incididunt mollit eiusmod sit est enim reprehenderit ea elit. Ea eiusmod tempor cillum voluptate nulla ipsum sint nostrud ad ex commodo deserunt proident ipsum. Cupidatat nulla proident commodo voluptate sunt nostrud incididunt laborum labore.\r\n",
-      "icon": "", 
+      "icon": "",
       "image": "https://softwarezay.com/sample_images/ecommerce/sliders/slide5.jpeg"
     }
-    
   ],
   "categories": [
     {
-      "index": 0,
+      "id": 1,
       "name": "လျှပ်စစ်ပစ္စည်းများ",
       "description": "Consequat mollit elit excepteur tempor commodo sunt excepteur mollit reprehenderit incididunt irure do dolore cillum. Labore nisi nulla in ad exercitation elit. Minim fugiat id ad elit officia esse laborum officia amet adipisicing qui et cupidatat sunt. Magna velit do sit aute. Eiusmod minim nulla fugiat ea nisi consectetur Lorem ex qui consequat laborum tempor. Aute eiusmod occaecat consectetur aliqua ea quis enim ullamco et magna irure.\r\n",
-      "icon": "dirves", 
+      "icon": "dirves",
       "image": "https://softwarezay.com/sample_images/ecommerce/categories/vegetable.png"
     },
     {
-      "index": 1,
+      "id": 2,
       "name": "အိမ်သုံးပစ္စည်းများ",
       "description": "Minim veniam mollit id nostrud eu aliqua ad ullamco nulla nulla Lorem deserunt ipsum labore. Veniam est aute fugiat veniam qui incididunt Lorem duis aute eu irure consequat. Consequat non laboris enim do proident proident occaecat cupidatat incididunt. Aliqua laboris esse dolore pariatur. Exercitation consequat consequat laborum adipisicing ex commodo est.\r\n",
-      "icon": "weekend", 
+      "icon": "weekend",
       "image": "https://softwarezay.com/sample_images/ecommerce/categories/fruit.png"
     },
     {
-      "index": 2,
+      "id": 3,
       "name": "ကျန်းမာရေးနှင် အလှအပရေးရာ",
       "description": "Dolore ad cillum ex est commodo id pariatur. Sunt non pariatur ad excepteur ut eu nisi magna. Dolore laboris irure amet in ut consequat cupidatat consectetur sunt aliquip nostrud tempor amet. Laboris eu deserunt consequat tempor aute proident cupidatat sint irure ut et occaecat velit laborum. Dolor adipisicing eiusmod dolore in voluptate elit non fugiat nulla elit cupidatat sunt velit.\r\n",
-      "icon": "local_hospital", 
+      "icon": "local_hospital",
       "image": "https://softwarezay.com/sample_images/ecommerce/categories/meat.png"
     },
     {
-      "index": 3,
+      "id": 4,
       "name": "အမျိုးသားဖက်ရှင်",
       "description": "Ipsum excepteur sint incididunt mollit eiusmod sit est enim reprehenderit ea elit. Ea eiusmod tempor cillum voluptate nulla ipsum sint nostrud ad ex commodo deserunt proident ipsum. Cupidatat nulla proident commodo voluptate sunt nostrud incididunt laborum labore.\r\n",
-      "icon": "directions_walk", 
+      "icon": "directions_walk",
       "image": "https://softwarezay.com/sample_images/ecommerce/categories/seafood.png"
     },
     {
-      "index": 3,
+      "id": 5,
       "name": "အမျိုးသမီးဖက်ရှင်",
       "description": "Ipsum excepteur sint incididunt mollit eiusmod sit est enim reprehenderit ea elit. Ea eiusmod tempor cillum voluptate nulla ipsum sint nostrud ad ex commodo deserunt proident ipsum. Cupidatat nulla proident commodo voluptate sunt nostrud incididunt laborum labore.\r\n",
-      "icon": "pregnant_woman", 
+      "icon": "pregnant_woman",
       "image": "https://softwarezay.com/sample_images/ecommerce/categories/seafood.png"
     }
-    
   ],
-    "most_orders": [
-      {
-        "index": 0,
-        "name": "လဘ္ဘက်ရည်",
-        "description": "Consequat mollit elit excepteur tempor commodo sunt excepteur mollit reprehenderit incididunt irure do dolore cillum. Labore nisi nulla in ad exercitation elit. Minim fugiat id ad elit officia esse laborum officia amet adipisicing qui et cupidatat sunt. Magna velit do sit aute. Eiusmod minim nulla fugiat ea nisi consectetur Lorem ex qui consequat laborum tempor. Aute eiusmod occaecat consectetur aliqua ea quis enim ullamco et magna irure.\r\n",
-        "icon": "", 
-        "image": "https://softwarezay.com/sample_images/teashop/most_orders/tea.jpeg"
-      },
-      {
-        "index": 1,
-        "name": "မုန့်ဟင်းခါး",
-        "description": "Minim veniam mollit id nostrud eu aliqua ad ullamco nulla nulla Lorem deserunt ipsum labore. Veniam est aute fugiat veniam qui incididunt Lorem duis aute eu irure consequat. Consequat non laboris enim do proident proident occaecat cupidatat incididunt. Aliqua laboris esse dolore pariatur. Exercitation consequat consequat laborum adipisicing ex commodo est.\r\n",
-        "icon": "", 
-        "image": "https://softwarezay.com/sample_images/teashop/most_orders/mohinga.jpeg"
-      },
-      {
-        "index": 2,
-        "name": "စမူဆာ",
-        "description": "Dolore ad cillum ex est commodo id pariatur. Sunt non pariatur ad excepteur ut eu nisi magna. Dolore laboris irure amet in ut consequat cupidatat consectetur sunt aliquip nostrud tempor amet. Laboris eu deserunt consequat tempor aute proident cupidatat sint irure ut et occaecat velit laborum. Dolor adipisicing eiusmod dolore in voluptate elit non fugiat nulla elit cupidatat sunt velit.\r\n",
-        "icon": "", 
-        "image": "https://softwarezay.com/sample_images/teashop/most_orders/samosa.jpeg"
-      },
-      {
-        "index": 3,
-        "name": "နံပြား",
-        "description": "Ipsum excepteur sint incididunt mollit eiusmod sit est enim reprehenderit ea elit. Ea eiusmod tempor cillum voluptate nulla ipsum sint nostrud ad ex commodo deserunt proident ipsum. Cupidatat nulla proident commodo voluptate sunt nostrud incididunt laborum labore.\r\n",
-        "icon": "", 
-        "image": "https://softwarezay.com/sample_images/teashop/most_orders/naan.jpeg"
-      },
-      {
-        "index": 4,
-        "name": "အီကြာကွေး",
-        "description": "Ipsum excepteur sint incididunt mollit eiusmod sit est enim reprehenderit ea elit. Ea eiusmod tempor cillum voluptate nulla ipsum sint nostrud ad ex commodo deserunt proident ipsum. Cupidatat nulla proident commodo voluptate sunt nostrud incididunt laborum labore.\r\n",
-        "icon": "", 
-        "image": "https://softwarezay.com/sample_images/teashop/most_orders/fried-breadstick.jpeg"
-      },
-      {
-        "index": 4,
-        "name": "ပလာတာ",
-        "description": "Ipsum excepteur sint incididunt mollit eiusmod sit est enim reprehenderit ea elit. Ea eiusmod tempor cillum voluptate nulla ipsum sint nostrud ad ex commodo deserunt proident ipsum. Cupidatat nulla proident commodo voluptate sunt nostrud incididunt laborum labore.\r\n",
-        "icon": "", 
-        "image": "https://softwarezay.com/sample_images/teashop/most_orders/roti-prata.jpeg"
-      }
-      
-    ],
-    "flash_items": [
-      {
-        "index": 0,
-        "name": "Acer Aspire 3 (A314) ( Celeron )",
-        "description": "Acer Aspire 3 (A314) ( Celeron )",
-        "image": "https://softwarezay.com/sample_images/ecommerce/items/acer-x34-predator-monitor.jpg",
-        "currency_unit": "Ks",
-        "unit" : "1 pcs", 
-        "price": 140000.00
-      },
-      {
-        "index": 1,
-        "name": "Men's Digital Q&Q Wrist Watch M127J003Y",
-        "description": "Harris Murphy GEEKOSIS",
-        "image": "https://softwarezay.com/sample_images/ecommerce/items/watch.png",
-        "currency_unit": "Ks",
-        "unit" : "1 Kg", 
-        "price": 25000.00
-      },
-      {
-        "index": 2,
-        "name": "MaxBook 2 door half height 5 shelves-glass",
-        "description": "Huffman Carney EVENTAGE",
-        "image": "https://softwarezay.com/sample_images/ecommerce/items/maxbook-2-door-half-height-5-shelves-glass.jpg",
-        "currency_unit": "Ks",
-        "unit" : "1 pcs", 
-        "price": 120000.00
-      },
-      {
-        "index": 3,
-        "name": "Oppo Neo 5",
-        "description": "Fletcher Hale ZANYMAX",
-        "image": "https://softwarezay.com/sample_images/ecommerce/items/oppo-neo-5.jpg",
-        "currency_unit": "Ks",
-        "unit" : "1 Kg", 
-        "price": 150000.00
-      }
-      
-    ],
-    "featured_items": [
-      {
-        "index": 0,
-        "name": "Acer Aspire 3 (A314) ( Celeron )",
-        "description": "Acer Aspire 3 (A314) ( Celeron )",
-        "image": "https://softwarezay.com/sample_images/ecommerce/items/acer-aspire-3-a314-celeron-.jpg",
-        "currency_unit": "Ks",
-        "unit" : "1 Kg", 
-        "price": 140000.00
-      },
-      {
-        "index": 1,
-        "name": "MAX-033 Shoe cabinet",
-        "description": "Harris Murphy GEEKOSIS",
-        "image": "https://softwarezay.com/sample_images/ecommerce/items/maxbook-2-door-half-height-5-shelves-glass.jpg",
-        "currency_unit": "Ks",
-        "unit" : "1 pcs", 
-        "price": 213000.00
-      },
-      {
-        "index": 2,
-        "name": "Acer X34 Predator Monitor",
-        "description": "Huffman Carney EVENTAGE",
-        "image": "https://softwarezay.com/sample_images/ecommerce/items/acer-x34-predator-monitor.jpg",
-        "currency_unit": "Ks",
-        "unit" : "1 Kg", 
-        "price": 1310400.00
-      },
-      {
-        "index": 3,
-        "name": "OPPO A37 (Dual Sim) (4G) - Rose Gold",
-        "description": "Fletcher Hale ZANYMAX",
-        "image": "https://softwarezay.com/sample_images/ecommerce/items/oppo-neo-5.jpg",
-        "currency_unit": "Ks",
-        "unit" : "1 Kg", 
-        "price": 169000.00
-      }
-      
-    ],
-    "just_for_you_items": [
-      {
-        "index": 0,
-        "name": "Adidas sneaker boost (light grey) (38)",
-        "description": "ဖရဲသီး",
-        "image": "https://softwarezay.com/sample_images/ecommerce/items/watermelon.jpg",
-        "currency_unit": "Ks",
-        "unit" : "1 Kg", 
-        "price": 1381.78
-      },
-      {
-        "index": 1,
-        "name": "Adidas sneaker EQT (dark blue) (41)",
-        "description": "Harris Murphy GEEKOSIS",
-        "image": "https://softwarezay.com/sample_images/ecommerce/items/water-apinatch.jpg",
-        "currency_unit": "Ks",
-        "unit" : "1 Kg", 
-        "price": 3190.03
-      }
-    ],
-    
-    "items": [
-   
-      {
-        "index": 0,
-        "name": "လဘ္ဘက်ရည်",
-        "description": "Consequat mollit elit excepteur tempor commodo sunt excepteur mollit reprehenderit incididunt irure do dolore cillum. Labore nisi nulla in ad exercitation elit. Minim fugiat id ad elit officia esse laborum officia amet adipisicing qui et cupidatat sunt. Magna velit do sit aute. Eiusmod minim nulla fugiat ea nisi consectetur Lorem ex qui consequat laborum tempor. Aute eiusmod occaecat consectetur aliqua ea quis enim ullamco et magna irure.\r\n",
-        "icon": "", 
-        "image": "https://softwarezay.com/sample_images/teashop/most_orders/tea.jpeg",
-        "currency_unit": "Ks",
-        "unit" : "1 pcs", 
-        "price": 400.00
-      },
-      {
-        "index": 1,
-        "name": "မုန့်ဟင်းခါး",
-        "description": "Minim veniam mollit id nostrud eu aliqua ad ullamco nulla nulla Lorem deserunt ipsum labore. Veniam est aute fugiat veniam qui incididunt Lorem duis aute eu irure consequat. Consequat non laboris enim do proident proident occaecat cupidatat incididunt. Aliqua laboris esse dolore pariatur. Exercitation consequat consequat laborum adipisicing ex commodo est.\r\n",
-        "icon": "", 
-        "image": "https://softwarezay.com/sample_images/teashop/most_orders/mohinga.jpeg",
-        "currency_unit": "Ks",
-        "unit" : "1 pcs", 
-        "price": 600.00
-      },
-      {
-        "index": 2,
-        "name": "စမူဆာ",
-        "description": "Dolore ad cillum ex est commodo id pariatur. Sunt non pariatur ad excepteur ut eu nisi magna. Dolore laboris irure amet in ut consequat cupidatat consectetur sunt aliquip nostrud tempor amet. Laboris eu deserunt consequat tempor aute proident cupidatat sint irure ut et occaecat velit laborum. Dolor adipisicing eiusmod dolore in voluptate elit non fugiat nulla elit cupidatat sunt velit.\r\n",
-        "icon": "", 
-        "image": "https://softwarezay.com/sample_images/teashop/most_orders/samosa.jpeg",
-        "currency_unit": "Ks",
-        "unit" : "1 pcs", 
-        "price": 150.00
-      },
-      {
-        "index": 3,
-        "name": "နံပြား",
-        "description": "Ipsum excepteur sint incididunt mollit eiusmod sit est enim reprehenderit ea elit. Ea eiusmod tempor cillum voluptate nulla ipsum sint nostrud ad ex commodo deserunt proident ipsum. Cupidatat nulla proident commodo voluptate sunt nostrud incididunt laborum labore.\r\n",
-        "icon": "", 
-        "image": "https://softwarezay.com/sample_images/teashop/most_orders/naan.jpeg",
-        "currency_unit": "Ks",
-        "unit" : "1 pcs", 
-        "price": 200.00
-      },
-      {
-        "index": 4,
-        "name": "အီကြာကွေး",
-        "description": "Ipsum excepteur sint incididunt mollit eiusmod sit est enim reprehenderit ea elit. Ea eiusmod tempor cillum voluptate nulla ipsum sint nostrud ad ex commodo deserunt proident ipsum. Cupidatat nulla proident commodo voluptate sunt nostrud incididunt laborum labore.\r\n",
-        "icon": "", 
-        "image": "https://softwarezay.com/sample_images/teashop/most_orders/fried-breadstick.jpeg",
-        "currency_unit": "Ks",
-        "unit" : "1 pcs", 
-        "price": 300.00
-      },
-      {
-        "index": 5,
-        "name": "ပလာတာ",
-        "description": "Ipsum excepteur sint incididunt mollit eiusmod sit est enim reprehenderit ea elit. Ea eiusmod tempor cillum voluptate nulla ipsum sint nostrud ad ex commodo deserunt proident ipsum. Cupidatat nulla proident commodo voluptate sunt nostrud incididunt laborum labore.\r\n",
-        "icon": "", 
-        "image": "https://softwarezay.com/sample_images/teashop/most_orders/roti-prata.jpeg",
-        "currency_unit": "Ks",
-        "unit" : "1 pcs", 
-        "price": 500.00
-      },
-      {
-        "index": 6,
-        "name": "လဘ္ဘက်ရည်",
-        "description": "Consequat mollit elit excepteur tempor commodo sunt excepteur mollit reprehenderit incididunt irure do dolore cillum. Labore nisi nulla in ad exercitation elit. Minim fugiat id ad elit officia esse laborum officia amet adipisicing qui et cupidatat sunt. Magna velit do sit aute. Eiusmod minim nulla fugiat ea nisi consectetur Lorem ex qui consequat laborum tempor. Aute eiusmod occaecat consectetur aliqua ea quis enim ullamco et magna irure.\r\n",
-        "icon": "", 
-        "image": "https://softwarezay.com/sample_images/teashop/most_orders/tea.jpeg",
-        "currency_unit": "Ks",
-        "unit" : "1 pcs", 
-        "price": 400.00
-      },
-      {
-        "index": 7,
-        "name": "မုန့်ဟင်းခါး",
-        "description": "Minim veniam mollit id nostrud eu aliqua ad ullamco nulla nulla Lorem deserunt ipsum labore. Veniam est aute fugiat veniam qui incididunt Lorem duis aute eu irure consequat. Consequat non laboris enim do proident proident occaecat cupidatat incididunt. Aliqua laboris esse dolore pariatur. Exercitation consequat consequat laborum adipisicing ex commodo est.\r\n",
-        "icon": "", 
-        "image": "https://softwarezay.com/sample_images/teashop/most_orders/mohinga.jpeg",
-        "currency_unit": "Ks",
-        "unit" : "1 pcs", 
-        "price": 600.00
-      },
-      {
-        "index": 8,
-        "name": "စမူဆာ",
-        "description": "Dolore ad cillum ex est commodo id pariatur. Sunt non pariatur ad excepteur ut eu nisi magna. Dolore laboris irure amet in ut consequat cupidatat consectetur sunt aliquip nostrud tempor amet. Laboris eu deserunt consequat tempor aute proident cupidatat sint irure ut et occaecat velit laborum. Dolor adipisicing eiusmod dolore in voluptate elit non fugiat nulla elit cupidatat sunt velit.\r\n",
-        "icon": "", 
-        "image": "https://softwarezay.com/sample_images/teashop/most_orders/samosa.jpeg",
-        "currency_unit": "Ks",
-        "unit" : "1 pcs", 
-        "price": 150.00
-      },
-      {
-        "index": 9,
-        "name": "နံပြား",
-        "description": "Ipsum excepteur sint incididunt mollit eiusmod sit est enim reprehenderit ea elit. Ea eiusmod tempor cillum voluptate nulla ipsum sint nostrud ad ex commodo deserunt proident ipsum. Cupidatat nulla proident commodo voluptate sunt nostrud incididunt laborum labore.\r\n",
-        "icon": "", 
-        "image": "https://softwarezay.com/sample_images/teashop/most_orders/naan.jpeg",
-        "currency_unit": "Ks",
-        "unit" : "1 pcs", 
-        "price": 200.00
-      },
-      {
-        "index": 10,
-        "name": "အီကြာကွေး",
-        "description": "Ipsum excepteur sint incididunt mollit eiusmod sit est enim reprehenderit ea elit. Ea eiusmod tempor cillum voluptate nulla ipsum sint nostrud ad ex commodo deserunt proident ipsum. Cupidatat nulla proident commodo voluptate sunt nostrud incididunt laborum labore.\r\n",
-        "icon": "", 
-        "image": "https://softwarezay.com/sample_images/teashop/most_orders/fried-breadstick.jpeg",
-        "currency_unit": "Ks",
-        "unit" : "1 pcs", 
-        "price": 300.00
-      },
-      {
-        "index": 11,
-        "name": "ပလာတာ",
-        "description": "Ipsum excepteur sint incididunt mollit eiusmod sit est enim reprehenderit ea elit. Ea eiusmod tempor cillum voluptate nulla ipsum sint nostrud ad ex commodo deserunt proident ipsum. Cupidatat nulla proident commodo voluptate sunt nostrud incididunt laborum labore.\r\n",
-        "icon": "", 
-        "image": "https://softwarezay.com/sample_images/teashop/most_orders/roti-prata.jpeg",
-        "currency_unit": "Ks",
-        "unit" : "1 pcs", 
-        "price": 500.00
-      }
-    ]
-  }
+  "most_orders": [
+    {
+      "index": 0,
+      "name": "လဘ္ဘက်ရည်",
+      "description": "Consequat mollit elit excepteur tempor commodo sunt excepteur mollit reprehenderit incididunt irure do dolore cillum. Labore nisi nulla in ad exercitation elit. Minim fugiat id ad elit officia esse laborum officia amet adipisicing qui et cupidatat sunt. Magna velit do sit aute. Eiusmod minim nulla fugiat ea nisi consectetur Lorem ex qui consequat laborum tempor. Aute eiusmod occaecat consectetur aliqua ea quis enim ullamco et magna irure.\r\n",
+      "icon": "",
+      "image": "https://softwarezay.com/sample_images/teashop/most_orders/tea.jpeg"
+    },
+    {
+      "index": 1,
+      "name": "မုန့်ဟင်းခါး",
+      "description": "Minim veniam mollit id nostrud eu aliqua ad ullamco nulla nulla Lorem deserunt ipsum labore. Veniam est aute fugiat veniam qui incididunt Lorem duis aute eu irure consequat. Consequat non laboris enim do proident proident occaecat cupidatat incididunt. Aliqua laboris esse dolore pariatur. Exercitation consequat consequat laborum adipisicing ex commodo est.\r\n",
+      "icon": "",
+      "image": "https://softwarezay.com/sample_images/teashop/most_orders/mohinga.jpeg"
+    },
+    {
+      "index": 2,
+      "name": "စမူဆာ",
+      "description": "Dolore ad cillum ex est commodo id pariatur. Sunt non pariatur ad excepteur ut eu nisi magna. Dolore laboris irure amet in ut consequat cupidatat consectetur sunt aliquip nostrud tempor amet. Laboris eu deserunt consequat tempor aute proident cupidatat sint irure ut et occaecat velit laborum. Dolor adipisicing eiusmod dolore in voluptate elit non fugiat nulla elit cupidatat sunt velit.\r\n",
+      "icon": "",
+      "image": "https://softwarezay.com/sample_images/teashop/most_orders/samosa.jpeg"
+    },
+    {
+      "index": 3,
+      "name": "နံပြား",
+      "description": "Ipsum excepteur sint incididunt mollit eiusmod sit est enim reprehenderit ea elit. Ea eiusmod tempor cillum voluptate nulla ipsum sint nostrud ad ex commodo deserunt proident ipsum. Cupidatat nulla proident commodo voluptate sunt nostrud incididunt laborum labore.\r\n",
+      "icon": "",
+      "image": "https://softwarezay.com/sample_images/teashop/most_orders/naan.jpeg"
+    },
+    {
+      "index": 4,
+      "name": "အီကြာကွေး",
+      "description": "Ipsum excepteur sint incididunt mollit eiusmod sit est enim reprehenderit ea elit. Ea eiusmod tempor cillum voluptate nulla ipsum sint nostrud ad ex commodo deserunt proident ipsum. Cupidatat nulla proident commodo voluptate sunt nostrud incididunt laborum labore.\r\n",
+      "icon": "",
+      "image": "https://softwarezay.com/sample_images/teashop/most_orders/fried-breadstick.jpeg"
+    },
+    {
+      "index": 4,
+      "name": "ပလာတာ",
+      "description": "Ipsum excepteur sint incididunt mollit eiusmod sit est enim reprehenderit ea elit. Ea eiusmod tempor cillum voluptate nulla ipsum sint nostrud ad ex commodo deserunt proident ipsum. Cupidatat nulla proident commodo voluptate sunt nostrud incididunt laborum labore.\r\n",
+      "icon": "",
+      "image": "https://softwarezay.com/sample_images/teashop/most_orders/roti-prata.jpeg"
+    }
+  ],
+  "flash_items": [
+    {
+      "id": 1,
+      "name": "Factory direct custom men casual plaid 100% cotton shirts ",
+      "description": "Henan Linson Textile Co.,Ltd. is established in 2010,located in Zhengzhou City,Henan Province,China.",
+      "icon": "",
+      "image": "https://softwarezay.com/sample_images/ecommerce/items/shirt1.jpg",
+      "currency_unit": "Ks",
+      "unit": "1 pcs",
+      "price": 1200.0
+    },
+    {
+      "id": 10,
+      "name": "Full round screen Sport Smart Watch 2018 ",
+      "description": "Ipsum excepteur sint incididunt mollit eiusmod sit est enim reprehenderit ea elit. Ea eiusmod tempor cillum voluptate nulla ipsum sint nostrud ad ex commodo deserunt proident ipsum. Cupidatat nulla proident commodo voluptate sunt nostrud incididunt laborum labore.\r\n",
+      "icon": "",
+      "image": "https://softwarezay.com/sample_images/ecommerce/items/item-2-6.jpg",
+      "currency_unit": "Ks",
+      "unit": "1 pcs",
+      "price": 150000.0
+    },
+    {
+      "id": 9,
+      "name": "Cheapest Tablet 10.1 inch MT6797Deca (10)-core 4G Network 4+64G computer tablet pc with BT keyboard and stylus ",
+      "description": "Dolore ad cillum ex est commodo id pariatur. Sunt non pariatur ad excepteur ut eu nisi magna. Dolore laboris irure amet in ut consequat cupidatat consectetur sunt aliquip nostrud tempor amet. Laboris eu deserunt consequat tempor aute proident cupidatat sint irure ut et occaecat velit laborum. Dolor adipisicing eiusmod dolore in voluptate elit non fugiat nulla elit cupidatat sunt velit.\r\n",
+      "icon": "",
+      "image": "https://softwarezay.com/sample_images/ecommerce/items/item-1-1.jpg",
+      "currency_unit": "Ks",
+      "unit": "1 pcs",
+      "price": 150000.0
+    },
+    {
+      "id": 10,
+      "name": "Full round screen Sport Smart Watch 2018 ",
+      "description": "Ipsum excepteur sint incididunt mollit eiusmod sit est enim reprehenderit ea elit. Ea eiusmod tempor cillum voluptate nulla ipsum sint nostrud ad ex commodo deserunt proident ipsum. Cupidatat nulla proident commodo voluptate sunt nostrud incididunt laborum labore.\r\n",
+      "icon": "",
+      "image": "https://softwarezay.com/sample_images/ecommerce/items/item-2-6.jpg",
+      "currency_unit": "Ks",
+      "unit": "1 pcs",
+      "price": 150000.0
+    }
+  ],
+  "featured_items": [
+    {
+      "id": 5,
+      "name": "Man Shirt",
+      "description": "Customized packaging",
+      "icon": "",
+      "image": "https://softwarezay.com/sample_images/ecommerce/items/shirt-5-1.jpg",
+      "currency_unit": "Ks",
+      "unit": "1 pcs",
+      "price": 40800.0
+    },
+    {
+      "id": 8,
+      "name": "Cheapest Charger",
+      "description": "Minim veniam mollit id nostrud eu aliqua ad ullamco nulla nulla Lorem deserunt ipsum labore. Veniam est aute fugiat veniam qui incididunt Lorem duis aute eu irure consequat. Consequat non laboris enim do proident proident occaecat cupidatat incididunt. Aliqua laboris esse dolore pariatur. Exercitation consequat consequat laborum adipisicing ex commodo est.\r\n",
+      "icon": "",
+      "image": "https://softwarezay.com/sample_images/ecommerce/items/shirt-8-1.jpg",
+      "currency_unit": "Ks",
+      "unit": "1 pcs",
+      "price": 15000.0
+    },
+    {
+      "id": 13,
+      "name": "House Hold Items Electric Lunch Box Food Warmer Home Use 12V Lunch Box Stove Meat Food Storage Container",
+      "description": "Ipsum excepteur sint incididunt mollit eiusmod sit est enim reprehenderit ea elit. Ea eiusmod tempor cillum voluptate nulla ipsum sint nostrud ad ex commodo deserunt proident ipsum. Cupidatat nulla proident commodo voluptate sunt nostrud incididunt laborum labore.\r\n",
+      "icon": "",
+      "image": "https://softwarezay.com/sample_images/ecommerce/items/item-4-1.jpg",
+      "currency_unit": "Ks",
+      "unit": "1 pcs",
+      "price": 150000.0
+    },
+    {
+      "id": 11,
+      "name": "FDA/ LFGB Cheap Electronic Lunchbox ",
+      "description": "Ipsum excepteur sint incididunt mollit eiusmod sit est enim reprehenderit ea elit. Ea eiusmod tempor cillum voluptate nulla ipsum sint nostrud ad ex commodo deserunt proident ipsum. Cupidatat nulla proident commodo voluptate sunt nostrud incididunt laborum labore.\r\n",
+      "icon": "",
+      "image": "https://softwarezay.com/sample_images/ecommerce/items/item-11-1.jpg",
+      "currency_unit": "Ks",
+      "unit": "1 pcs",
+      "price": 160000.0
+    }
+  ],
+  "just_for_you_items": [
+    {
+      "index": 0,
+      "name": "Adidas sneaker boost (light grey) (38)",
+      "description": "ဖရဲသီး",
+      "image": "https://softwarezay.com/sample_images/ecommerce/items/watermelon.jpg",
+      "currency_unit": "Ks",
+      "unit": "1 Kg",
+      "price": 1381.78
+    },
+    {
+      "index": 1,
+      "name": "Adidas sneaker EQT (dark blue) (41)",
+      "description": "Harris Murphy GEEKOSIS",
+      "image": "https://softwarezay.com/sample_images/ecommerce/items/water-apinatch.jpg",
+      "currency_unit": "Ks",
+      "unit": "1 Kg",
+      "price": 3190.03
+    }
+  ],
+
+  "items": [
+    {
+      "id": 1,
+      "name": "Factory direct custom men casual plaid 100% cotton shirts ",
+      "description": "Henan Linson Textile Co.,Ltd. is established in 2010,located in Zhengzhou City,Henan Province,China.",
+      "icon": "",
+      "image": "https://softwarezay.com/sample_images/ecommerce/items/shirt1.jpg",
+      "currency_unit": "Ks",
+      "unit": "1 pcs",
+      "price": 1200.0
+    },
+    {
+      "id": 2,
+      "name": "Fashion 100% Cotton Cheap Men's Custom Printed Round Neck Men T Shirt",
+      "description": "Customized logo, Customized packaging",
+      "icon": "",
+      "image": "https://softwarezay.com/sample_images/ecommerce/items/shirt-2-1.jpg",
+      "currency_unit": "Ks",
+      "unit": "1 pcs",
+      "price": 5100.0
+    },
+    {
+      "id": 3,
+      "name": "Cheap Price 180gsm 100% Cotton Custom LOGO Printing Plain White T shirts for Men",
+      "description": "Cheap Price 180gsm 100% Cotton Custom LOGO Printing Plain White T shirts for Men",
+      "icon": "",
+      "image": "https://softwarezay.com/sample_images/ecommerce/items/shirt-3-1.jpg",
+      "currency_unit": "Ks",
+      "unit": "1 pcs",
+      "price": 2500.0
+    },
+    {
+      "id": 4,
+      "name": "Cheap Price 180gsm 100% Cotton Custom LOGO Printing Plain White T shirts for Men",
+      "description": "Customized logo, Customized packaging, Graphic customization",
+      "icon": "",
+      "image": "https://softwarezay.com/sample_images/ecommerce/items/shirt-4-1.jpg",
+      "currency_unit": "Ks",
+      "unit": "1 pcs",
+      "price": 2500.0
+    },
+    {
+      "id": 5,
+      "name": "Man Shirt",
+      "description": "Customized packaging",
+      "icon": "",
+      "image": "https://softwarezay.com/sample_images/ecommerce/items/shirt-5-1.jpg",
+      "currency_unit": "Ks",
+      "unit": "1 pcs",
+      "price": 40800.0
+    },
+    {
+      "id": 6,
+      "name": "OEM Custom 100% Cotton Long Sleeve Classic Men Formal Dress Shirt for Business Made in China",
+      "description": "Customized logo, Customized packaging",
+      "icon": "",
+      "image": "https://softwarezay.com/sample_images/ecommerce/items/shirt-6-1.png",
+      "currency_unit": "Ks",
+      "unit": "1 pcs",
+      "price": 40800.0
+    },
+    {
+      "id": 7,
+      "name": "Projector",
+      "description": "Consequat mollit elit excepteur tempor commodo sunt excepteur mollit reprehenderit incididunt irure do dolore cillum. Labore nisi nulla in ad exercitation elit. Minim fugiat id ad elit officia esse laborum officia amet adipisicing qui et cupidatat sunt. Magna velit do sit aute. Eiusmod minim nulla fugiat ea nisi consectetur Lorem ex qui consequat laborum tempor. Aute eiusmod occaecat consectetur aliqua ea quis enim ullamco et magna irure.\r\n",
+      "icon": "",
+      "image": "https://softwarezay.com/sample_images/ecommerce/items/shirt-7-1.jpg",
+      "currency_unit": "Ks",
+      "unit": "1 pcs",
+      "price": 150000.0
+    },
+    {
+      "id": 8,
+      "name": "Cheapest Charger",
+      "description": "Minim veniam mollit id nostrud eu aliqua ad ullamco nulla nulla Lorem deserunt ipsum labore. Veniam est aute fugiat veniam qui incididunt Lorem duis aute eu irure consequat. Consequat non laboris enim do proident proident occaecat cupidatat incididunt. Aliqua laboris esse dolore pariatur. Exercitation consequat consequat laborum adipisicing ex commodo est.\r\n",
+      "icon": "",
+      "image": "https://softwarezay.com/sample_images/ecommerce/items/shirt-8-1.jpg",
+      "currency_unit": "Ks",
+      "unit": "1 pcs",
+      "price": 15000.0
+    },
+    {
+      "id": 9,
+      "name": "Cheapest Tablet 10.1 inch MT6797Deca (10)-core 4G Network 4+64G computer tablet pc with BT keyboard and stylus ",
+      "description": "Dolore ad cillum ex est commodo id pariatur. Sunt non pariatur ad excepteur ut eu nisi magna. Dolore laboris irure amet in ut consequat cupidatat consectetur sunt aliquip nostrud tempor amet. Laboris eu deserunt consequat tempor aute proident cupidatat sint irure ut et occaecat velit laborum. Dolor adipisicing eiusmod dolore in voluptate elit non fugiat nulla elit cupidatat sunt velit.\r\n",
+      "icon": "",
+      "image": "https://softwarezay.com/sample_images/ecommerce/items/item-1-1.jpg",
+      "currency_unit": "Ks",
+      "unit": "1 pcs",
+      "price": 150000.0
+    },
+    {
+      "id": 10,
+      "name": "Full round screen Sport Smart Watch 2018 ",
+      "description": "Ipsum excepteur sint incididunt mollit eiusmod sit est enim reprehenderit ea elit. Ea eiusmod tempor cillum voluptate nulla ipsum sint nostrud ad ex commodo deserunt proident ipsum. Cupidatat nulla proident commodo voluptate sunt nostrud incididunt laborum labore.\r\n",
+      "icon": "",
+      "image": "https://softwarezay.com/sample_images/ecommerce/items/item-2-6.jpg",
+      "currency_unit": "Ks",
+      "unit": "1 pcs",
+      "price": 150000.0
+    },
+    {
+      "id": 11,
+      "name": "FDA/ LFGB Cheap Electronic Lunchbox ",
+      "description": "Ipsum excepteur sint incididunt mollit eiusmod sit est enim reprehenderit ea elit. Ea eiusmod tempor cillum voluptate nulla ipsum sint nostrud ad ex commodo deserunt proident ipsum. Cupidatat nulla proident commodo voluptate sunt nostrud incididunt laborum labore.\r\n",
+      "icon": "",
+      "image": "https://softwarezay.com/sample_images/ecommerce/items/item-11-1.jpg",
+      "currency_unit": "Ks",
+      "unit": "1 pcs",
+      "price": 160000.0
+    },
+    {
+      "id": 12,
+      "name": "House Hold Items Electric Lunch Box Food Warmer Home Use 12V Lunch Box Stove Meat Food Storage Container",
+      "description": "Ipsum excepteur sint incididunt mollit eiusmod sit est enim reprehenderit ea elit. Ea eiusmod tempor cillum voluptate nulla ipsum sint nostrud ad ex commodo deserunt proident ipsum. Cupidatat nulla proident commodo voluptate sunt nostrud incididunt laborum labore.\r\n",
+      "icon": "",
+      "image": "https://softwarezay.com/sample_images/ecommerce/items/item-3-5.jpg",
+      "currency_unit": "Ks",
+      "unit": "1 pcs",
+      "price": 150000.0
+    },
+    {
+      "id": 13,
+      "name": "House Hold Items Electric Lunch Box Food Warmer Home Use 12V Lunch Box Stove Meat Food Storage Container",
+      "description": "Ipsum excepteur sint incididunt mollit eiusmod sit est enim reprehenderit ea elit. Ea eiusmod tempor cillum voluptate nulla ipsum sint nostrud ad ex commodo deserunt proident ipsum. Cupidatat nulla proident commodo voluptate sunt nostrud incididunt laborum labore.\r\n",
+      "icon": "",
+      "image": "https://softwarezay.com/sample_images/ecommerce/items/item-4-1.jpg",
+      "currency_unit": "Ks",
+      "unit": "1 pcs",
+      "price": 150000.0
+    }
+  ]
+}

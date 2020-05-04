@@ -14,12 +14,16 @@ class MenuItemPage extends StatelessWidget{
   final String phone="9818522122";
   final double total = 500;
   final double delivery = 100;
+  final int id; 
+
+  MenuItemPage({Key key, this.id}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
         create: (context) =>
-              PostBloc(httpClient: http.Client())..add(FetchPostEvent()),
+              PostBloc(httpClient: http.Client())..add(FetchPostEvent(id : this.id )),
               child: BlocBuilder<PostBloc, PostState>(
           builder: (context, state) {
             if (state is PostInitial) {
@@ -64,7 +68,7 @@ class MenuItemPage extends StatelessWidget{
                     */
                     SliverToBoxAdapter(
                       child: Container(
-                        height: 250.0,
+                        height: 400.0,
                         padding: EdgeInsets.symmetric(horizontal: 0.0),
                         child: Swiper(
                           autoplay: true,
@@ -193,8 +197,18 @@ class MenuItemPage extends StatelessWidget{
   _buildOptions(BuildContext context, Post post) {
     List<Widget> list = [];
     list.add(
-      Text('${post.name}', textAlign: TextAlign.left,
-        style: new TextStyle(fontSize: 23.0, fontWeight: FontWeight.bold))
+      Padding(
+        padding: const EdgeInsets.all(15.0),
+        child: Text('${post.name}', textAlign: TextAlign.left,
+          style: new TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold)),
+      )
+    );
+    list.add(
+      Padding(
+        padding: const EdgeInsets.all(15.0),
+        child: Text('${post.description}', textAlign: TextAlign.left,
+          style: new TextStyle(fontSize: 15.0, fontWeight: FontWeight.normal)),
+      )
     );
     post.options
         .map((optionGroup) => (optionGroup.type == 'radio')
@@ -248,6 +262,7 @@ class MenuItemPage extends StatelessWidget{
                 ))
             : list.add(ExpansionTile(
                 //title: Text('${optionGroup.title}'),
+                initiallyExpanded: true,
                 title: new RichText(
                   text: new TextSpan(
                     style: new TextStyle(

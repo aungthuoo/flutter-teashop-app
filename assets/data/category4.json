@@ -1,0 +1,75 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "name": "Factory direct custom men casual plaid 100% cotton shirts ",
+      "description": "Henan Linson Textile Co.,Ltd. is established in 2010,located in Zhengzhou City,Henan Province,China.",
+      "icon": "",
+      "image": "https://softwarezay.com/sample_images/ecommerce/items/shirt1.jpg",
+      "currency_unit": "Ks",
+      "unit": "1 pcs",
+      "price": 1200.0
+    },
+    {
+      "id": 2,
+      "name": "Fashion 100% Cotton Cheap Men's Custom Printed Round Neck Men T Shirt",
+      "description": "Customized logo, Customized packaging",
+      "icon": "",
+      "image": "https://softwarezay.com/sample_images/ecommerce/items/shirt-2-1.jpg",
+      "currency_unit": "Ks",
+      "unit": "1 pcs",
+      "price": 5100.0
+    },
+    {
+      "id": 3,
+      "name": "Cheap Price 180gsm 100% Cotton Custom LOGO Printing Plain White T shirts for Men",
+      "description": "Cheap Price 180gsm 100% Cotton Custom LOGO Printing Plain White T shirts for Men",
+      "icon": "",
+      "image": "https://softwarezay.com/sample_images/ecommerce/items/shirt-3-1.jpg",
+      "currency_unit": "Ks",
+      "unit": "1 pcs",
+      "price": 2500.0
+    },
+    {
+      "id": 4,
+      "name": "Cheap Price 180gsm 100% Cotton Custom LOGO Printing Plain White T shirts for Men",
+      "description": "Customized logo, Customized packaging, Graphic customization",
+      "icon": "",
+      "image": "https://softwarezay.com/sample_images/ecommerce/items/shirt-4-1.jpg",
+      "currency_unit": "Ks",
+      "unit": "1 pcs",
+      "price": 2500.0
+    },
+    {
+      "id": 5,
+      "name": "Man Shirt",
+      "description": "Customized packaging",
+      "icon": "",
+      "image": "https://softwarezay.com/sample_images/ecommerce/items/shirt-5-1.jpg",
+      "currency_unit": "Ks",
+      "unit": "1 pcs",
+      "price": 40800.0
+    },
+    {
+      "id": 6,
+      "name": "OEM Custom 100% Cotton Long Sleeve Classic Men Formal Dress Shirt for Business Made in China",
+      "description": "Customized logo, Customized packaging",
+      "icon": "",
+      "image": "https://softwarezay.com/sample_images/ecommerce/items/shirt-6-1.png",
+      "currency_unit": "Ks",
+      "unit": "1 pcs",
+      "price": 40800.0
+    },
+
+    {
+      "id": 10,
+      "name": "Full round screen Sport Smart Watch 2018 ",
+      "description": "Ipsum excepteur sint incididunt mollit eiusmod sit est enim reprehenderit ea elit. Ea eiusmod tempor cillum voluptate nulla ipsum sint nostrud ad ex commodo deserunt proident ipsum. Cupidatat nulla proident commodo voluptate sunt nostrud incididunt laborum labore.\r\n",
+      "icon": "",
+      "image": "https://softwarezay.com/sample_images/ecommerce/items/item-2-6.jpg",
+      "currency_unit": "Ks",
+      "unit": "1 pcs",
+      "price": 150000.0
+    }
+  ]
+}

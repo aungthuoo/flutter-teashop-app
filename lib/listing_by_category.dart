@@ -12,17 +12,18 @@ import 'model/post.dart';
 import 'model/posts.dart';
 import 'package:intl/intl.dart';
 
-class ListingPage extends StatelessWidget {
+class ListingByCategoryPage extends StatelessWidget {
+  final int id; 
   final List<Post> cartItems;
 
-  ListingPage({Key key, this.cartItems}) : super(key: key);
+  ListingByCategoryPage({Key key, this.id, this.cartItems}) : super(key: key);
 
 
   @override
     Widget build(BuildContext context) {
       return BlocProvider(
         create: (context) =>
-            PostBloc(httpClient: http.Client())..add(FetchFlashPostsEvent(3, 1, 'Popular Sales', this.cartItems)),
+            PostBloc(httpClient: http.Client())..add(FetchPostsByCategoryEvent(this.id, 'Popular Sales', this.cartItems)),
         child: HomePage(),
       ); 
     }
@@ -77,7 +78,7 @@ class _HomePageState extends State<HomePage> {
               onTap: () => Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => MenuItemPage(id : posts.flash_items.items[i].id )),
+                              builder: (context) => MenuItemPage(id: posts.flash_items.items[i].id,)),
                         ) //.then((menuItem)=>_getRequests(menuItem)
                             .then((menuItem) => (menuItem != null)
                                 ? _getRequests(menuItem, cartItems, posts)

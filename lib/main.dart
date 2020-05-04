@@ -10,6 +10,7 @@ import 'bloc/post_bloc.dart';
 
 import 'confirm_order.dart';
 import 'listing.dart';
+import 'listing_by_category.dart';
 import 'menu_item.dart';
 import 'model/category.dart';
 import 'model/post.dart';
@@ -19,6 +20,8 @@ import 'search.dart';
 import 'widgets/network_image.dart';
 import 'package:intl/intl.dart';
 import 'package:countdown_flutter/countdown_flutter.dart';
+
+import 'wish_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -74,7 +77,7 @@ class _HomePageState extends State<HomePage> {
     super.initState();
   }
 
-  Widget _buildPopular(Posts posts) {
+  Widget _buildPopular(Posts posts, List<Post> cartItems) {
     var size = MediaQuery.of(context).size;
     final double itemHeight = 100;
     final double itemWidth = size.width / 2;
@@ -102,8 +105,20 @@ class _HomePageState extends State<HomePage> {
                       ))
                     ),
                     child: ListTile(
-                      onTap: (){},
-                      title: Text("${posts.featured_items[i].name}", style: TextStyle(color: Colors.black, fontSize: 13.0), ),
+                      onTap: (){
+                        Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => MenuItemPage(id : posts.featured_items[i].id )),
+                              ) //.then((menuItem)=>_getRequests(menuItem)
+                                  .then((menuItem) => (menuItem != null)
+                                      ? _getRequests(menuItem, cartItems, posts)
+                                      : null);
+                      },
+                      title: Text("${posts.featured_items[i].name}", 
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(color: Colors.black, fontSize: 13.0), ),
                       subtitle: Text('Ks.${ formatter.format(posts.featured_items[i].price)}'),
                       trailing: Container(width: 50, child: PNetworkImage(posts.featured_items[i].image, fit: BoxFit.cover,)),
                     ),
@@ -195,7 +210,14 @@ class _HomePageState extends State<HomePage> {
                               EdgeInsets.only(top: 0, right: 0, bottom: 5, left: 0),
                           child: GestureDetector(
                             onTap: () {
-                              
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => MenuItemPage(id : posts.flash_items.items[index].id )),
+                              ) //.then((menuItem)=>_getRequests(menuItem)
+                                  .then((menuItem) => (menuItem != null)
+                                      ? _getRequests(menuItem, cartItems, posts)
+                                      : null);
                             },
                             child: Container(
                               height: 170,
@@ -348,7 +370,7 @@ class _HomePageState extends State<HomePage> {
               onTap: () => Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => MenuItemPage()),
+                              builder: (context) => MenuItemPage(id :posts.items[i].id)),
                         ) //.then((menuItem)=>_getRequests(menuItem)
                             .then((menuItem) => (menuItem != null)
                                 ? _getRequests(menuItem, cartItems, posts)
@@ -613,7 +635,7 @@ class _HomePageState extends State<HomePage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => ListingPage(cartItems: cartItems,)),
+                    builder: (context) => ListingByCategoryPage(id: categories[index].id, cartItems: cartItems,)),
               ); 
             },
             child: Column(
@@ -761,7 +783,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   
                   
-                  _buildPopular(state.items),
+                  _buildPopular(state.items, state.cartItems),
                   
                   SliverToBoxAdapter(
                       child: Center(child: Padding(
@@ -806,7 +828,11 @@ class _HomePageState extends State<HomePage> {
               fixedColor: Colors.orange,
               onTap: (int index) {
                   //_selectedIndex = index;
-                  if(index == 2){
+                  if(index == 1){
+                    Navigator.push(context, MaterialPageRoute(
+                            builder: (_) => WishPage()
+                          ));
+                  }else if(index == 2){
                     Navigator.push(context, MaterialPageRoute(
                             builder: (_) => ConfirmOrderPage(cartItems: state.cartItems)
                           ));

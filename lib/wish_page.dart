@@ -4,14 +4,14 @@ import 'package:http/http.dart' as http;
 import 'bloc/post_bloc.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
-class SearchPage extends StatelessWidget {
+class WishPage extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) =>
-          PostBloc(httpClient: http.Client())..add(FetchSearchPostsEvent('')),
-      child: MyHomePage(title: 'Search Stock')
+          PostBloc(httpClient: http.Client())..add(FetchWishPostsEvent('')),
+      child: MyHomePage(title: 'Wish List')
     ); 
 
     //return MyHomePage(title: 'Search Stock');
@@ -82,7 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
           );
         }
 
-        if (state is SearchLoaded) {
+        if (state is WishItemsLoaded) {
           return new Scaffold(
             appBar: new AppBar(
               title: new Text(widget.title),
@@ -90,25 +90,11 @@ class _MyHomePageState extends State<MyHomePage> {
             body: Container(
               child: Column(
                 children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: TextField(
-                      onChanged: (value) {
-                        filterSearchResults(value);
-                      },
-                      controller: editingController,
-                      decoration: InputDecoration(
-                          labelText: "Search",
-                          hintText: "Search",
-                          prefixIcon: Icon(Icons.search),
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(Radius.circular(0.0)))),
-                    ),
-                  ),
+                  
                   Expanded(
                     child: ListView.builder(
                       shrinkWrap: true,
-                      itemExtent: 80.0,
+                      itemExtent: 100.0,
                       itemCount: state.items.length,
                       itemBuilder: (context, index) {
                         return ListTile(
@@ -124,7 +110,10 @@ class _MyHomePageState extends State<MyHomePage> {
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
-                              Text('${state.items[index].name}'),
+                              Text('${state.items[index].name}', 
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                              ),
                               Text('Ks.${state.items[index].price}' , 
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
@@ -145,11 +134,8 @@ class _MyHomePageState extends State<MyHomePage> {
         }
       }
     );
-
-
-
-    
   }
+
 
   @override
   void dispose() {

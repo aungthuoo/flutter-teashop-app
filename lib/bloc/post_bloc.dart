@@ -44,12 +44,23 @@ class PostBloc extends Bloc<PostEvent, PostState> {
       final items = await appRepository.fetchFlashPosts(1);
       //yield FlashPostsLoaded(items: items, cartItems: event.cartItems );
       yield PostsLoaded(items: items, cartItems: event.cartItems );
-
+    }else if (event is FetchPostsByCategoryEvent) {
+      print('FetchPostsByCategoryEvent fire');
+      yield PostLoading();
+      final items = await appRepository.fetchPostsByCategory(event.id);
+      //yield FlashPostsLoaded(items: items, cartItems: event.cartItems );
+      yield PostsLoaded(items: items, cartItems: event.cartItems );
     }else if (event is FetchSearchPostsEvent) {
       print('FetchPostEvent fire');
       yield PostLoading();
       final items = await appRepository.fetchSearchPosts(event.searchString);
       yield SearchLoaded(items: items);
+    }else if (event is FetchWishPostsEvent) {
+      print('FetchPostEvent fire');
+      yield PostLoading();
+      final items = await appRepository.fetchWishPosts(event.searchString);
+      yield WishItemsLoaded(items: items);
+
 
 
     }else if (event is FetchOrderItemsEvent) {
@@ -89,7 +100,7 @@ class PostBloc extends Bloc<PostEvent, PostState> {
     }else if (event is FetchPostEvent) {
       print('FetchDataEvent fire');
       yield PostLoading();
-      final item = await appRepository.fetchPost(1);
+      final item = await appRepository.fetchPost(event.id );
       yield PostLoaded(item: item);
     
     
