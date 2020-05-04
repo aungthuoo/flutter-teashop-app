@@ -73,6 +73,8 @@ flutter:
     - assets/data/category4.json
     - assets/data/category5.json
 
+    - assets/data/popular_listing.json
+
     - assets/data/wish_items.json
     - assets/data/search.json
     - assets/data/order_items.json

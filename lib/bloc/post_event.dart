@@ -10,6 +10,17 @@ class FetchPostsEvent extends PostEvent {
   FetchPostsEvent(this.id) : super([id]);
 }
 
+
+
+class FetchPopularListingEvent extends PostEvent {
+  final int type; 
+  final int id;
+  final String caption; 
+  final List<Post> cartItems; 
+  FetchPopularListingEvent(this.type, this.id, this.caption, this.cartItems) : super([type, id, caption, cartItems]);
+}
+
+
 class FetchFlashPostsEvent extends PostEvent {
   final int type; 
   final int id;

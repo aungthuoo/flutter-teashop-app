@@ -12,11 +12,11 @@ import 'model/post.dart';
 import 'model/posts.dart';
 import 'package:intl/intl.dart';
 
-class ListingByCategoryPage extends StatelessWidget {
+class PostListingByCategoryPage extends StatelessWidget {
   final int id; 
   final List<Post> cartItems;
 
-  ListingByCategoryPage({Key key, this.id, this.cartItems}) : super(key: key);
+  PostListingByCategoryPage({Key key, this.id, this.cartItems}) : super(key: key);
 
 
   @override

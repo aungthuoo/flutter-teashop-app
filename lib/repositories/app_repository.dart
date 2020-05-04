@@ -130,6 +130,31 @@ class AppRepository extends DBModel {
 
 
 
+  Future<Posts> fetchPopularListing(int id) async {
+    Map<String, dynamic> result = await parseJsonFromAssets('assets/data/popular_listing.json');
+    return Posts(
+        
+        flash_items:  FlashPost(
+            caption: 'Flash Sales', 
+            hour: "15", 
+            minute: "30",
+            second: "15",
+            items:  result['items'].map<Post>((item) {
+              return Post(
+                id: item['id'],
+                name: item['name'],
+                description: item['description'],
+                image: item['image'],
+                currency_unit: item['currency_unit'],
+                amount_unit: item['amount_unit'],
+                price: item['price'],
+              );
+            }).toList(),
+        ),  
+      );
+  }
+
+
   Future<Posts> fetchPostsByCategory(int id) async {
     String fileName = 'category${id}.json'; 
     Map<String, dynamic> result = await parseJsonFromAssets('assets/data/$fileName');

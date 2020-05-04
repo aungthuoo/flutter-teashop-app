@@ -44,6 +44,12 @@ class PostBloc extends Bloc<PostEvent, PostState> {
       final items = await appRepository.fetchFlashPosts(1);
       //yield FlashPostsLoaded(items: items, cartItems: event.cartItems );
       yield PostsLoaded(items: items, cartItems: event.cartItems );
+    }else if (event is FetchPopularListingEvent) {
+      print('FetchFlashPostsEvent fire');
+      yield PostLoading();
+      final items = await appRepository.fetchPopularListing(1);
+      //yield FlashPostsLoaded(items: items, cartItems: event.cartItems );
+      yield PostsLoaded(items: items, cartItems: event.cartItems );
     }else if (event is FetchPostsByCategoryEvent) {
       print('FetchPostsByCategoryEvent fire');
       yield PostLoading();

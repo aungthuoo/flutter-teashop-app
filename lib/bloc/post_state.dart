@@ -66,6 +66,16 @@ class SearchLoaded extends PostState {
 }
 
 
+class PopularListingLoaded extends PostState {
+  final List<Post> items; 
+  PopularListingLoaded({this.items}) : super([items]);
+
+  @override
+  String toString() => 'SearchLoaded';
+}
+
+
+
 class WishItemsLoaded extends PostState {
   final List<Post> items; 
   WishItemsLoaded({this.items}) : super([items]);

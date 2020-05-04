@@ -9,8 +9,9 @@ import 'package:http/http.dart' as http;
 import 'bloc/post_bloc.dart';
 
 import 'confirm_order.dart';
-import 'listing.dart';
-import 'listing_by_category.dart';
+import 'popular_listing.dart';
+import 'post_listing.dart';
+import 'post_listing_by_category.dart';
 import 'menu_item.dart';
 import 'model/category.dart';
 import 'model/post.dart';
@@ -184,7 +185,7 @@ class _HomePageState extends State<HomePage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => ListingPage(cartItems: cartItems,)),
+                          builder: (context) => PostListingPage(cartItems: cartItems,)),
                     ); 
                   },
               ),
@@ -635,7 +636,7 @@ class _HomePageState extends State<HomePage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => ListingByCategoryPage(id: categories[index].id, cartItems: cartItems,)),
+                    builder: (context) => PostListingByCategoryPage(id: categories[index].id, cartItems: cartItems,)),
               ); 
             },
             child: Column(
@@ -770,7 +771,7 @@ class _HomePageState extends State<HomePage> {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => ListingPage(cartItems: state.cartItems,)),
+                                        builder: (context) => PopularListingPage(cartItems: state.cartItems,)),
                                   ); 
                                 },
                             ),
@@ -806,7 +807,7 @@ class _HomePageState extends State<HomePage> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => ListingPage(cartItems: state.cartItems,)),
+                                    builder: (context) => PostListingPage(cartItems: state.cartItems,)),
                               ); 
                             },
                         ),

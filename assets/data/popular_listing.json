@@ -1,0 +1,44 @@
+{
+  "items": [
+    {
+      "id": 5,
+      "name": "Man Shirt",
+      "description": "Customized packaging",
+      "icon": "",
+      "image": "https://softwarezay.com/sample_images/ecommerce/items/shirt-5-1.jpg",
+      "currency_unit": "Ks",
+      "unit": "1 pcs",
+      "price": 40800.0
+    },
+    {
+      "id": 8,
+      "name": "Cheapest Charger",
+      "description": "Minim veniam mollit id nostrud eu aliqua ad ullamco nulla nulla Lorem deserunt ipsum labore. Veniam est aute fugiat veniam qui incididunt Lorem duis aute eu irure consequat. Consequat non laboris enim do proident proident occaecat cupidatat incididunt. Aliqua laboris esse dolore pariatur. Exercitation consequat consequat laborum adipisicing ex commodo est.\r\n",
+      "icon": "",
+      "image": "https://softwarezay.com/sample_images/ecommerce/items/shirt-8-1.jpg",
+      "currency_unit": "Ks",
+      "unit": "1 pcs",
+      "price": 15000.0
+    },
+    {
+      "id": 13,
+      "name": "House Hold Items Electric Lunch Box Food Warmer Home Use 12V Lunch Box Stove Meat Food Storage Container",
+      "description": "Ipsum excepteur sint incididunt mollit eiusmod sit est enim reprehenderit ea elit. Ea eiusmod tempor cillum voluptate nulla ipsum sint nostrud ad ex commodo deserunt proident ipsum. Cupidatat nulla proident commodo voluptate sunt nostrud incididunt laborum labore.\r\n",
+      "icon": "",
+      "image": "https://softwarezay.com/sample_images/ecommerce/items/item-4-1.jpg",
+      "currency_unit": "Ks",
+      "unit": "1 pcs",
+      "price": 150000.0
+    },
+    {
+      "id": 11,
+      "name": "FDA/ LFGB Cheap Electronic Lunchbox ",
+      "description": "Ipsum excepteur sint incididunt mollit eiusmod sit est enim reprehenderit ea elit. Ea eiusmod tempor cillum voluptate nulla ipsum sint nostrud ad ex commodo deserunt proident ipsum. Cupidatat nulla proident commodo voluptate sunt nostrud incididunt laborum labore.\r\n",
+      "icon": "",
+      "image": "https://softwarezay.com/sample_images/ecommerce/items/item-11-1.jpg",
+      "currency_unit": "Ks",
+      "unit": "1 pcs",
+      "price": 160000.0
+    }
+  ]
+}
